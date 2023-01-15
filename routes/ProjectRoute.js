@@ -27,4 +27,10 @@ router.get("/doctorProfile", function (req, res) {
     // additional locals, a custom layout, or other options can be defined here
   });
 });
+router.get("/doctorHome", function (req, res) {
+  userController.register(req, res);
+  res.render("doctor/Home", {
+    // additional locals, a custom layout, or other options can be defined here
+  });
+});
 export default router;
