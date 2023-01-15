@@ -21,4 +21,10 @@ router.get("/newDoctor", function (req, res) {
     // additional locals, a custom layout, or other options can be defined here
   });
 });
+router.get("/doctorProfile", function (req, res) {
+  userController.register(req, res);
+  res.render("doctor/Profile", {
+    // additional locals, a custom layout, or other options can be defined here
+  });
+});
 export default router;
