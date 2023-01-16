@@ -17,7 +17,7 @@ router.get("/newUser", function (req, res) {
 
 router.get("/newDoctor", function (req, res) {
   userController.register(req, res);
-  res.render("doctor/doctor", {
+  res.render("doctor/newdoctor", {
     // additional locals, a custom layout, or other options can be defined here
   });
 });
