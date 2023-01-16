@@ -25,24 +25,18 @@ router.get('/doctorProfile', function (req, res) {
   userController.register(req, res)
   res.render('doctor/Profile', {
     // additional locals, a custom layout, or other options can be defined here
-<<<<<<< HEAD
-  });
-});
-router.get("/doctorHome", function (req, res) {
-  userController.register(req, res);
-  res.render("doctor/Home", {
+  })
+})
+router.get('/doctorHome', function (req, res) {
+  userController.register(req, res)
+  res.render('doctor/Home', {
     // additional locals, a custom layout, or other options can be defined here
-  });
-});
-router.get("/NewClinic", function (req, res) {
-  userController.register(req, res);
-  res.render("clinic/Register", {
+  })
+})
+router.get('/NewClinic', function (req, res) {
+  userController.register(req, res)
+  res.render('clinic/Register', {
     // additional locals, a custom layout, or other options can be defined here
-  });
-});
-export default router;
-=======
   })
 })
 export default router
->>>>>>> b9e8a3d9a3e723aa3268f1ddab94e932a346b173
