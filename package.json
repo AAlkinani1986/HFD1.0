@@ -7,7 +7,7 @@
   "scripts": {
     "restart": "nodemon index.js",
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/AAlkinani1986/HFD1.0#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "chai": "^4.3.7",
     "connect-ensure-login": "^0.1.1",
     "cookie-parser": "^1.4.6",
     "cookie-session": "^2.0.0",
@@ -33,11 +34,13 @@
     "express-validator": "^6.14.2",
     "http-errors": "^2.0.0",
     "jsonwebtoken": "^9.0.0",
+    "mocha": "^10.2.0",
     "mongoose": "^6.8.2",
     "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",
     "pino": "^8.8.0",
-    "pino-pretty": "^9.1.1"
+    "pino-pretty": "^9.1.1",
+    "request": "^2.88.2"
   },
   "devDependencies": {
     "eslint": "^8.32.0",
