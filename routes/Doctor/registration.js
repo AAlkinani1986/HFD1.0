@@ -1,14 +1,14 @@
-import { Router } from 'express'
-import passport from 'passport'
+import { Router } from "express";
+import passport from "passport";
 
-const router = Router()
+const router = Router();
 
 export function registrationDoctor() {
-  router.get('/registration', function (req, res) {
-    res.render('doctor/registration', {
-      page: 'new doctor',
-    })
-  })
+  router.get("/registration", function (req, res) {
+    res.render("doctor/registration", {
+      page: "new doctor",
+    });
+  });
 
-  return router
+  return router;
 }
