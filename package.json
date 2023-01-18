@@ -2,11 +2,11 @@
   "name": "hfd1.0",
   "version": "1.0.0",
   "description": "Health First Deakin is a dietitian app where the user can have a healthy diet",
-  "main": "index.js",
+  "main": "app.js",
   "type": "module",
   "scripts": {
-    "restart": "nodemon index.js",
-    "start": "node index.js",
+    "restart": "nodemon ./server/bin/start",
+    "start": "node ./server/bin/start",
     "test": "mocha --reporter spec"
   },
   "repository": {
