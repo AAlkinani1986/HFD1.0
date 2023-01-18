@@ -40,7 +40,7 @@ font-weight: bolder;
   z-index: 1;
 }
 
-.container{
+.container_login{
   display: flex;
 
   justify-content: center;
@@ -50,7 +50,21 @@ font-weight: bolder;
 .row{
   flex: 1;
 }
-.registration_card{
+.registration_card, .login_card{
   width: 600px !important;
-  height: 700px !important;
+ 
+}
+.registration_card{
+  height: 720px !important;
+}
+.card_header{
+  padding-bottom: 0 !important; margin-bottom: 0 !important; 
+}
+.card_body{
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+card-title{
+ margin: 0 !important;
+ padding: 0 !important;
 }
