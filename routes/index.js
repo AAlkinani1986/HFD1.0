@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import { authRouter } from './user/index.js'
-import userController from '../controllers/userController.js'
+
 import { ensureLoggedIn } from 'connect-ensure-login'
 import cors from 'cors'
 import { doctorRoutes } from './Doctor/index.js'

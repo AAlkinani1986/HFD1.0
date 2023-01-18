@@ -1,0 +1,56 @@
+body{
+  font-family: 'Times New Roman', Times, serif;
+}
+.material-icons {
+  color: #004d40;
+}
+ .login {
+  color: white;
+}
+.remember_me{
+  margin: 10px auto !important;
+  padding: 10px auto !important;
+color: rgba(6, 6, 6, 0.503) !important;
+font-weight: bolder;
+}
+.btn_login{
+  margin: 20px auto;
+  padding: 10px auto;
+}
+#signUp .divider-text {
+  position: relative;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+#signUp .divider-text span {
+  padding: 7px;
+  font-size: 12px;
+  position: relative;
+  font-size: medium;
+  z-index: 2;
+}
+#signUp .divider-text:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  top: 55%;
+  left: 0;
+  z-index: 1;
+}
+
+.container{
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  margin: 100px 500px auto;
+}
+.row{
+  flex: 1;
+}
+.registration_card{
+  width: 600px !important;
+  height: 700px !important;
+}
