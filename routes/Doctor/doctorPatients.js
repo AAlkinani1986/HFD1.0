@@ -3,9 +3,9 @@ import passport from "passport";
 
 const router = Router();
 
-export function profileDoctor() {
-  router.get("/profile", function (req, res) {
-    res.render("doctor/profile", {
+export function doctorPatients() {
+  router.get("/Patient", function (req, res) {
+    res.render("doctor/patient", {
       page: "profile doctor",
     });
   });

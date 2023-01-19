@@ -1,20 +1,23 @@
-  <div class="doctor"> 
-    <div><nav>
+<div class="doctor">
+  <div>
+    <nav>
       <div class="nav-wrapper #1de9b6 teal accent-3">
-        <a href="#" class="brand-logo right">Sign Out</a>
+        <a href="#" class="signout">Sign Out</a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
-          <li><li class="active"><a href="Home.ejs">Home</a></li></li>
-          <li><a href="Profile.ejs">Profile</a></li>
+          <li>
+          <li class="active"><a href="./Home">Home</a></li>
+          </li>
+          <li><a href="./Profile">Profile</a></li>
           <li><a href="Patient.ejs">Patient</a></li>
-          <li><a href="Appointment.ejs">Appointment</a></li>
-          <li><a href="BloodTest.ejs">Blood Test Request</a></li>
+          <li><a href="./registration">Registration</a></li>
+          <!-- <li><a href="BloodTest.ejs">Blood Test Request</a></li> -->
         </ul>
       </div>
     </nav>
     <div class="container">
       <div class="mt-4 p-5 bg-primary text-white rounded text-center">
-          <h1>Welcome Doctor</h1>
-          <!-- <p>Welcome to visit our clinic. Thank you for your trust.</p> -->
+        <h1>Welcome Doctor</h1>
+        <!-- <p>Welcome to visit our clinic. Thank you for your trust.</p> -->
       </div>
       <!-- <br> -->
       <h2>Your details</h2>
@@ -73,7 +76,7 @@
             <br><br><br>
             <p>
               <label>
-                <input name="Monday" type="checkbox"  />
+                <input name="Monday" type="checkbox" />
                 <span>Monday</span>
               </label>
             </p>
@@ -85,7 +88,7 @@
             </p>
             <p>
               <label>
-                <input name="Wednesday" type="checkbox"  />
+                <input name="Wednesday" type="checkbox" />
                 <span>Wednesday</span>
               </label>
             </p>
@@ -96,29 +99,29 @@
               </label>
             </p>
             <p>
-            <label>
-              <input name="Friday" type="checkbox"  />
-              <span>Friday</span>
-            </label>
-          </p>
-          <p>
-            <label>
-              <input name="Saturday" type="checkbox"  />
-              <span>Saturday</span>
-            </label>
-          </p>
-          <p>
-            <label>
-              <input name="Sunday" type="checkbox"  />
-              <span>Sunday</span>
-            </label>
-          </p>
+              <label>
+                <input name="Friday" type="checkbox" />
+                <span>Friday</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="Saturday" type="checkbox" />
+                <span>Saturday</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="Sunday" type="checkbox" />
+                <span>Sunday</span>
+              </label>
+            </p>
           </div>
 
           <!-- <div class="row">
             <div class="input-field col s3"> -->
-              <!-- <input id="consultingDays" type="text" class="validate"> -->
-              <!-- <label for="Language">Languages Spoken:</label>
+          <!-- <input id="consultingDays" type="text" class="validate"> -->
+          <!-- <label for="Language">Languages Spoken:</label>
             </div>
             <br><br><br>
             <div class="row">
@@ -127,12 +130,12 @@
                 <label for="Languages">Languages</label>
               </div>
             </div> -->
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="Language" type="text" class="validate" placeholder="Languages">
-                <label for="Languages">Languages:</label>
-              </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="Language" type="text" class="validate" placeholder="Languages">
+              <label for="Languages">Languages:</label>
             </div>
+          </div>
           <div class="row">
             <div class="input-field col s12">
               <input id="abn" type="text" class="validate" placeholder="ABN">
@@ -167,8 +170,9 @@
           </button>
         </form>
       </div>
-   
+
       <script src="../../public/js/doctor/doctor.js"></script>
-</div>
-</div>
+      <link rel="stylesheet" href="../../public/css/doctor/doctor.css" />
+    </div>
+  </div>
 </div>
