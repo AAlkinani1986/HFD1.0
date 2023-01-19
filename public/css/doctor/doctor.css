@@ -4,3 +4,7 @@
   display: inline-block;
   word-wrap: normal;
 }
+.signout {
+  padding-right: 2%;
+  float: right;
+}

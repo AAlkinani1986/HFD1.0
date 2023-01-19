@@ -1,78 +1,21 @@
-<div class="doctorProfile"> 
-  <div><nav>
-    <div class="nav-wrapper #1de9b6 teal accent-3">
-      <a href="#" class="brand-logo right">Sign Out</a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><li class="active"><a href="Home.ejs">Home</a></li></li>
-        <li><a href="Profile.ejs">Profile</a></li>
-        <li><a href="Patient.ejs">Patient</a></li>
-        <li><a href="./registration.ejs">Registration</a></li>
-        <!-- <li><a href="BloodTest.ejs">Blood Test Request</a></li> -->
-      </ul>
-    </div>
-  </nav>
-
-  <div class="container">
-    <div class="mt-4 p-5 bg-primary text-white rounded text-center">
-      <h2>Upcoming Appointments</h2>
-  <table class="table">
-    <thead>
-      <tr>
-          <th>Name</th>
-          <th>Age</th>
-          <th>Date</th>
-          <th>Time</th>
-          <th>Cancel</th>
-      </tr>
-    </thead>
-      <tbody id="myTable">
-      
-      </tbody>
-  </table>
-    </div>
-
-    <div class="col s12 m8 offset-m2 l6 offset-l3">
-      <div class="card-panel grey lighten-5 z-depth-1">
-        <div class="row valign-wrapper">
-          <div class="col s2">
-            <p >Michael James</p>
-            <img src="../../public/images/patient1.jpg" width="200px" height="100px" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
-          </div>
-          <div class="col s10">
-            <span class="black-text bold" style="padding-left: 20%;">
-              <div class="row col s12">
-             <h6 style="padding-left: 10%;"> Weight: 70Kg Height: 170 CM</h6>
-              </div>
-            </span>
-            </div>
-          </div>
-          <div class="row">
-          <div class="row patient-card">
-            <div class="col s12">
-              <div class="card-panel teal">
-                <p>Medical History</p>
-                <span class="white-text ">“Dull pain in left knee over the past 2 weeks. Patient stated pain started after his fall during the soccer game. The pain relieved by sitting, warm compress, and ibuprofen and aggravated by walking or standing.
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="row patient-card">
-          <div class="col s12 ">
-            <div class="card-panel teal">
-              <p>Medical History</p>
-              <span class="white-text ">“Dull pain in left knee over the past 2 weeks. Patient stated pain started after his fall during the soccer game. The pain relieved by sitting, warm compress, and ibuprofen and aggravated by walking or standing.
-              </span>
-            </div>
-          </div>
-        </div>
+<div class="doctorProfile">
+  <div>
+    <nav>
+      <div class="nav-wrapper #1de9b6 teal accent-3">
+        <a href="#" class="signout">Sign Out</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li>
+          <li class="active"><a href="./Home">Home</a></li>
+          </li>
+          <li><a href="./Profile">Profile</a></li>
+          <li><a href="Patient.ejs">Patient</a></li>
+          <li><a href="./registration">Registration</a></li>
+          <!-- <li><a href="BloodTest.ejs">Blood Test Request</a></li> -->
+        </ul>
       </div>
-    </div> 
-      </div>
-    </div>
+    </nav>
+
+
 
     <script src="../../public/js/doctor/doctor.js"></script>
-    <script src="../../routes/Doctor/doctorData.js"></script>
     <link rel="stylesheet" href="../../public/css/doctor/doctor.css" />
-    
-
