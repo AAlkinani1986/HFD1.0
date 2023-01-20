@@ -14,11 +14,11 @@
       </div>
       <div class="card-content card_body" >
        
-        <form  >
+        <form action="/user/login" autocomplete="off" method="POST" >
           <div class="row" >
             <div class="input-field col s12">
               <i class="material-icons prefix">account_circle</i>
-              <input id="username" type="text" class="validate">
+              <input name="username" id="username" type="text" class="validate">
               <label for="username">Username</label>
             </div>
       
@@ -26,13 +26,13 @@
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">locker</i>
-              <input id="password" type="password" class="validate">
+              <input  autocomplete="new-password" id="password" name="password" type="password" class="validate">
               <label for="password">Password</label>
             </div>
           </div>
           <p>
-            <label class="remember_me">
-              <input  type="checkbox" />
+            <label class="remember_me" for="rememberme">
+              <input  type="checkbox" id="rememberme" name="remember" value="1" />
               <span >Remember me </span>
             </label>
           </p>

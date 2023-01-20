@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 import crypto from 'crypto'
-
+import bcrypt from 'bcrypt'
 // export user module
 
 // users schema defined
@@ -43,4 +43,29 @@ const userSchema = mongoose.Schema(
     timestamps: true,
   },
 )
+async function generateHash(password) {
+  return bcrypt.hash(password, 12)
+}
+
+userSchema.pre('save', function preSave(next) {
+  const user = this
+  if (user.isModified('password')) {
+    return generateHash(user.password)
+      .then((hash) => {
+        user.password = hash
+        return next()
+      })
+      .catch((error) => {
+        return next(error)
+      })
+  }
+  return next()
+})
+
+userSchema.methods.comparePassword = async function comparePassword(
+  candidatePassword,
+) {
+  return bcrypt.compare(candidatePassword, this.password)
+}
+
 export const User = mongoose.model('HFD', userSchema, 'users')
