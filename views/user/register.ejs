@@ -1,9 +1,11 @@
 <main class="login">
     <div class="container_login">
-
+     
 <div class="row">
+
    <div class="col s12 m6">
-    <div class="card registration_card large grey lighten-4 black-text " id="signUp">
+    <%- include('../partials/messages');%>
+    <div class="card registration_card large white  black-text " id="signUp">
         <div class="card-content card_header">
             <span class="card-title center">
                 Register
@@ -11,12 +13,12 @@
         </div>
       <div class="card-content card_body">
       
-        <form  >
+        <form action="/user/register" autocomplete="off" method="post" >
           <div class="row">
             <div class="input-field col s12">
-              <i class="material-icons prefix">account_circle</i>
-              <input id="icon_prefix" type="text" class="validate">
-              <label for="icon_prefix">First Name</label>
+              <i class="material-icons prefix">account_box</i>
+              <input name="username"id="username" type="text" class="validate "  value="<%=locals.data && data.username ? data.username : '' %>">
+              <label class="<%=locals.errors && errors.includes('username') ? 'is-invalid' : ''%>" for="username">Username</label>
             </div>
       
           </div>
@@ -24,38 +26,38 @@
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">email</i>
-              <input id="icon_prefix" type="text" class="validate">
-              <label for="icon_prefix">Email</label>
+              <input name="email" id="email" type="email" value="<%=locals.data && data.email ? data.email : '' %>" class="validate">
+              <label class="<%=locals.errors && errors.includes('email') ? 'is-invalid' : ''%>" for="email">Email</label>
             </div>
       
           </div>
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">locker</i>
-              <input id="password" type="password" class="validate">
-              <label for="password">Password</label>
+              <input name="password"id="password" type="password"  value="<%=locals.data && data.password ? data.password : '' %>" class="validate">
+              <label class="<%=locals.errors && errors.includes('password') ? 'is-invalid' : ''%>"for="password">Password</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">locker</i>
-              <input id="confirmPassword" type="password" class="validate">
-              <label for="confirmPassword">ConfirmPassword</label>
+              <input name="confirmPassword" id="confirmPassword" value="<%=locals.data && data.confirmPassword? data.confirmPassword : '' %>" type="password" class="validate">
+              <label class="<%=locals.errors && errors.includes('confirmPassword') ? 'is-invalid' : ''%>" for="confirmPassword">ConfirmPassword</label>
             </div>
           </div>
-          <select class="browser-default">
-            <option value="" disabled selected>who are you?</option>
+          <select  class="browser-default <%=locals.errors && errors.includes('occupied') ? 'is-invalid' : ''%>" name="occupied" >
+            <option  disabled selected>who are you?</option>
             <option value="patient">Patient</option>
             <option value="doctor">Doctor</option>
             <option value="clinic">Clinic</option>
           </select>
           
           <div class="form-group">
-            <button type="submit" class="waves-effect waves-light btn-block  green darken-4  btn btn_login"><i class="material-icons  add_circle_outline login left">login</i>Create account</button>
+            <button type="submit" class="waves-effect waves-light btn-block  teal darken-4  btn btn_login"><i class="material-icons  add_circle_outline login left">login</i>Create account</button>
           </div> <!-- form-group// -->
         
           <p class="divider-text">
-            <span class="grey lighten-4 " style="font-size:medium;">Do you have an account already?</span>
+            <span class="white " style="font-size:medium;">Do you have an account already?</span>
           </p>
           <p class="text-center">
             <a class="btn btn-block grey darken-4" href="/">

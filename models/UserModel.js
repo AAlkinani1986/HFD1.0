@@ -1,6 +1,8 @@
 import mongoose from 'mongoose'
 import crypto from 'crypto'
 
+// export user module
+
 // users schema defined
 const userSchema = mongoose.Schema(
   {
@@ -24,6 +26,7 @@ const userSchema = mongoose.Schema(
       minlength: 8, // minimum length 8 characters
       trim: true,
     },
+    occupation: { type: String, required: true },
     verified: {
       type: Boolean,
       default: false,
@@ -40,5 +43,4 @@ const userSchema = mongoose.Schema(
     timestamps: true,
   },
 )
-// export user module
-export default ('User', userSchema)
+export const User = mongoose.model('HFD', userSchema, 'users')

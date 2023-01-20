@@ -1,13 +1,19 @@
-<% if(messages && messages.length> 0) {%>
+<% if(messages && messages.length> 0) {
+  let i =1
+  %>
+  
     <%while(messages.length> 0) {
+      
       const message =messages.pop();
       %>
   
-      <div class="alert alert-dismissable fade show alert-<%=message.type%>">
+      <div class="alert card  white-text <%=message.type%>" id="card-<%=i%>">
+      <div class="card-content message_text">
         <%-message.text;%>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+
       </div>
-      <% } %>
+      <a onclick=" jQuery('#card-<%=i%>').toggle('show');" class=" btn-floating <%=message.type%> "  id="close"><i class="material-icons ">close</i></a>
+          
+          </div>
+      <% i++} %>
         <%}%>

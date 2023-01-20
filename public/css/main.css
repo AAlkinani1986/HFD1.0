@@ -1,0 +1,37 @@
+body{
+    font-family: 'Times New Roman', Times, serif !important;
+  }
+.alert {
+	
+			font-weight: bold;
+			font-size: 1.1em;
+			margin-right:4px;
+            width: 600px !important;
+            display: flex;
+            justify-content: space-between;
+	
+}
+.danger{
+    background-color: #c62828
+
+}
+.success{
+   background-color: #1b5e20;
+}
+.btn-floating:hover{
+    background-color: #e53935
+ 
+}
+.message_text{
+    font-size: medium;
+    font-weight: bold;
+    font-style: oblique;
+
+}
+.is-invalid{
+    color: #c62828 !important ;
+
+}
+.material-icons {
+    color: #004d40 ;
+  }
