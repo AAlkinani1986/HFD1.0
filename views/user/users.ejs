@@ -1,0 +1,60 @@
+<%- include('../partials/header');%> 
+
+<main>
+    <div class="container userTable">
+      <%- include('../partials/messages');%>
+
+        <table class="striped grey darken-4 centered highlight responsive-table " style="font-size: medium; font-weight: 600;">
+          <thead style="font-size: large; font-weight: bold;">
+            <tr>
+              <th >Username</th>
+              <th >E-Mail</th>
+              <th >Password</th>
+              <th >Occupation</th>
+              <th >Verified</th>
+              <th >Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <% users.forEach(function(user) { %>
+              <tr>
+                <td>
+                  <%=user.username%>
+                </td>
+                <td>
+                  <%=user.email%>
+                </td>
+                <td class="d-inline-block text-truncate" style="max-width: 250px;">
+                  <%=user.password%>
+                </td>
+                <td>
+                    <%=user.occupation%>
+                  </td>
+                <td>
+                  <%=user.verified%>
+                </td>
+                <td>
+
+                  <% if(user.verificationToken) {%>
+                    <a href="/user/verify/<%=user._id%>/<%=user.verificationToken%>"class=" btn-floating btn_check"
+                      title="Verify user"><i class="material-icons">check_circle</i></a>
+                    <%}%>
+
+                      <% if(user.resetToken) {%>
+                        <a href="/user/resetpassword/<%=user._id%>/<%=user.resetToken%>"class=" waves-effect waves-light btn-small"
+                          title="Reset password"><i class="material-icons">check_circle</i></a>
+                        <%}%>
+
+                       
+                          <a href="/user/delete/<%=user._id%>" class=" btn-floating btn_delete"
+                            title="Delete user"><i class="material-icons"> delete_forever</i></a>
+
+                </td>
+              </tr>
+              <%});%>
+          </tbody>
+        </table>
+
+    </div>
+  </main>

@@ -2,7 +2,7 @@ import { Router } from 'express'
 import { authRouter } from './user/index.js'
 
 import { ensureLoggedIn } from 'connect-ensure-login'
-import cors from 'cors'
+
 import { doctorRoutes } from './Doctor/index.js'
 import { clinicRoutes } from './clinic/index.js'
 
@@ -23,5 +23,6 @@ export function routers(params) {
   router.use('/user', authRouter(params))
   router.use('/doctor', doctorRoutes(params))
   router.use('/clinic', clinicRoutes(params))
+
   return router
 }

@@ -1,11 +1,7 @@
-body{
-  font-family: 'Times New Roman', Times, serif;
-}
-.material-icons {
-  color: #004d40;
-}
+
+
  .login {
-  color: white;
+  color: white !important;
 }
 .remember_me{
   margin: 10px auto !important;
@@ -34,7 +30,7 @@ font-weight: bolder;
   content: '';
   position: absolute;
   width: 100%;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #212121 ;
   top: 55%;
   left: 0;
   z-index: 1;
@@ -64,7 +60,7 @@ font-weight: bolder;
   padding-top: 0 !important;
   margin-top: 0 !important;
 }
-card-title{
+.card-title{
  margin: 0 !important;
  padding: 0 !important;
 }
