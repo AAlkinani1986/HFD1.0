@@ -42,7 +42,7 @@ export function loginRouter(params) {
 
         if (errors.length) {
           // Render the page again and show the errors
-          return res.render('/', {
+          return res.render('user/login', {
             page: 'login',
             data: req.body,
             errors,
