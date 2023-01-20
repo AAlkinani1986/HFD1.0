@@ -18,6 +18,9 @@ body{
 .success{
    background-color: #1b5e20;
 }
+.info{
+    background-color: #039be5;
+}
 .btn-floating:hover{
     background-color: #e53935
  
@@ -34,4 +37,20 @@ body{
 }
 .material-icons {
     color: #004d40 ;
-  }
+}
+
+.userTable{
+    margin-top: 100px;
+    color: white !important;
+    padding-left: 10px !important;
+}
+.userTable > table{
+    padding: 10px !important;
+}
+.btn_check{
+    background-color:#1b5e20 !important;
+    margin-right: 5px;
+}
+.btn_delete{
+    background-color: #c62828 !important;
+}

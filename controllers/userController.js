@@ -157,12 +157,12 @@ export class UserController {
    * @returns a list of users
    */
   static async getUsers() {
-    return UserModel.find().sort({ createdAt: -1 }).exec()
+    return User.find().sort({ createdAt: -1 }).exec()
   }
 
   /**
    * Delete a user
-   * @param {userId} id
+   * @param {int} id
    * @returns
    */
   static async deleteUser(id) {
