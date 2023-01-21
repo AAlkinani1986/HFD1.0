@@ -5,7 +5,7 @@ const router = Router()
 
 export function Profile() {
   router.get('/profile', function (req, res) {
-    res.render('clinic//profile', {
+    res.render('clinic/profile', {
       page: 'new profile',
     })
   })
