@@ -1,13 +1,27 @@
 
   <nav>
     <div class="nav-wrapper green darken-4">
-      <a href="/" class="brand-logo center">HFD</a>
-      <ul id="nav-mobile" class=" hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-      </ul>
-      <a href="/user/logout" class="brand-logo right">Logout</a>
+    <% if(locals.user) {%>
+        <a href="/" class="brand-logo center">welcome back <%=user.username%> </a>
+        <%} else {%>
+                
+        
+     
+      <%}%>
+      <a href="/" class="brand-logo left">HFD</a>
+      <% if(locals.user) {%>
+ 
+          <a href="/user/logout" class="brand-logo right" ></i>
+            Logout </a>
+ 
+        <%} else {%>
+
+            <a href="/user/login" class="brand-logo right"></i>
+              Login</a>
+   
+          <%}%>
+      
+
     </div>
 
 </nav>

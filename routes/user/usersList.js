@@ -1,8 +1,12 @@
 import { Router } from 'express'
 import { UserController } from '../../controllers/UserController.js'
+import { ensureLoggedIn } from 'connect-ensure-login'
 const router = Router()
 export function usersList() {
-  router.get('/users', async (req, res, next) => {
+  router.get('/users', ensureLoggedIn('/'), async (req, res, next) => {
+    if (req.session.user.occupation != 'admin') {
+      return res.redirect('/')
+    }
     try {
       const users = await UserController.getUsers()
       const userList = await Promise.all(

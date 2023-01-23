@@ -1,13 +1,13 @@
 import passport from 'passport'
 import passportJWT, { ExtractJwt } from 'passport-jwt'
 import { UserController } from '../../../controllers/UserController.js'
-import local from 'passport-local'
+import LocalStrategy from 'passport-local'
 const JWTStrategy = passportJWT.Strategy
 const EXtractJWT = passportJWT.ExtractJwt
-const localStorage = local.Strategy
+const localStrategy = LocalStrategy.Strategy
 export function Passport(config) {
   passport.use(
-    new localStorage(
+    new localStrategy(
       {
         passReqToCallback: true,
       },
@@ -29,21 +29,15 @@ export function Passport(config) {
             })
             return done(null, false)
           }
-        } catch (error) {
-          return done(error)
-        }
-      },
-    ),
-  )
-  passport.use(
-    new JWTStrategy(
-      {
-        jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-        secretOrKey: config.JWTSECRET,
-      },
-      async (jwtPayload, done) => {
-        try {
-          const user = await UserController.findById(jwtPayload.userId)
+          const isValid = await user.comparePassword(req.body.password)
+          if (!isValid) {
+            req.session.messages.push({
+              text: 'Invalid username or password!',
+              type: 'danger',
+            })
+            return done(null, false)
+          }
+          req.session.user = user
           return done(null, user)
         } catch (error) {
           return done(error)
@@ -51,6 +45,7 @@ export function Passport(config) {
       },
     ),
   )
+
   passport.serializeUser((user, done) => {
     done(null, user.id)
   })

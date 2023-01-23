@@ -5,6 +5,7 @@ import { ensureLoggedIn } from 'connect-ensure-login'
 
 import { doctorRoutes } from './Doctor/index.js'
 import { clinicRoutes } from './clinic/index.js'
+import { patientRoutes } from './patient/index.js'
 
 var router = Router()
 // the module will return a function and pass params to routers
@@ -21,8 +22,9 @@ export function routers(params) {
   // auth users to the respective routing module.
   // We also pass down the params
   router.use('/user', authRouter(params))
-  router.use('/doctor', doctorRoutes(params))
-  router.use('/clinic', clinicRoutes(params))
+  router.use('/doctor', ensureLoggedIn('/'), doctorRoutes(params))
+  router.use('/clinic', ensureLoggedIn('/'), clinicRoutes(params))
+  router.use('/patient', ensureLoggedIn('/'), patientRoutes(params))
 
   return router
 }

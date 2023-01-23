@@ -20,7 +20,7 @@ export function verification() {
           type: 'success',
         })
       }
-      return res.redirect('/')
+      return res.redirect('/user/users')
     } catch (error) {
       return next(error)
     }
