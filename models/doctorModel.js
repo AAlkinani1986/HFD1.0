@@ -1,5 +1,4 @@
-import { text } from "express";
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
 const doctorSchema = mongoose.Schema({
   firstName: {
@@ -21,26 +20,24 @@ const doctorSchema = mongoose.Schema({
   },
   qualifications: {
     type: String,
-    required: true,
   },
   languages: {
     type: String,
-    required: true,
   },
   abn: {
-    type: Number,
-    required: true,
-  },
-  street: {
     type: String,
-    required: true,
   },
-  pinCode: {
-    type: Number,
-    required: true,
+  address: {
+    type: String,
   },
-});
+  state: {
+    type: String,
+  },
+  zibCode: {
+    type: String,
+  },
+})
 
 // var doctorModel = mongoose.model("doctor", doctorSchema);
 
-export const doctor = mongoose.model("doctor", doctorSchema, "doctors");
+export const Doctor = mongoose.model('doctor', doctorSchema, 'doctors')

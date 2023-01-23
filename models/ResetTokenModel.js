@@ -26,7 +26,7 @@ resetTokenSchema.index(
     expireAfterSeconds: 3600,
   },
 )
-export default RestToken = mongoose.model(
+export const ResetTokenModel = mongoose.model(
   'ResetToken',
   resetTokenSchema,
   'restToken',

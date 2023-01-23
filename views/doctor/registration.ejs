@@ -1,4 +1,6 @@
 <div class="doctor-registration">
+
+  <%- include('../partials/messages');%>
   <div>
     <nav>
       <div class="nav-wrapper #1de9b6 teal accent-3">
@@ -144,24 +146,24 @@
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input id="contact" type="number" class="validate" placeholder="Contact Details" name="contactDeatails">
+              <input id="contact" type="number" class="validate" placeholder="phone number" name="phoneNumber">
               <label for="contact">Contact Details:</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s6">
-              <input id="address" type="text" class="validate" placeholder="Street, Suburb" name="street">
+              <input id="address" type="text" class="validate" placeholder="Street, Suburb" name="address">
               <label for="address">Address:</label>
             </div>
             <div class="row">
               <div class="input-field col s6">
-                <input id="address" type="text" class="validate" placeholder="State" name="street">
+                <input id="address" type="text" class="validate" placeholder="State" name="state">
                 <!-- <label for="address">Contact Details:</label> -->
               </div>
             </div>
             <div class="row">
               <div class="input-field col offset-s4 s4">
-                <input id="pinCode" type="number" class="validate" placeholder="Pin Code" name="pinCode">
+                <input id="pinCode" type="number" class="validate" placeholder="Pin Code" name="zibCode">
                 <label for="pinCode">Pin Code:</label>
               </div>
             </div>

@@ -1,18 +1,32 @@
-import { Router } from "express";
-import { doctorController } from "../../controllers/doctorController.js";
+import { Router } from 'express'
+import { doctorController } from '../../controllers/doctorController.js'
 
-const router = Router();
+const router = Router()
 
 export function registrationDoctor() {
-  router.get("/registration", function (req, res) {
-    res.render("doctor/registration", {
-      page: "new doctor",
-    });
-  });
+  router.get('/registration', function (req, res) {
+    res.render('doctor/registration', {
+      page: 'new doctor',
+    })
+  })
 
-  router.post("/registration", async (req, res, next) => {
+  router.post('/registration', async (req, res, next) => {
     try {
-      console.log("data", req.body);
+      console.log('data', req.body)
+      await doctorController.createDoctor(
+        req.body.firstName,
+        req.body.lastName,
+        req.body.dateOfBirth,
+        req.body.registrationNumber,
+        req.body.qualifications,
+        req.body.languages,
+        req.body.abn,
+        req.body.phoneNumber,
+        req.body.address,
+        req.body.state,
+        req.body.zibCode,
+      )
+
       // const validationErrors = validation.validationResult(req);
       // const errors = [];
       // if (!validationErrors.isEmpty()) {
@@ -51,21 +65,16 @@ export function registrationDoctor() {
       //     errors,
       //   });
       // }
-      await doctorController.createDoctor(
-        req.body.firstName,
-        req.body.lastName,
-        req.body.dateOfBirth,
-        req.body.registrationNumber
-      );
-      req.session.messages.push({
-        text: "Your account created successfully",
-        type: "success",
-      });
-      return res.redirect("/doctor/patient");
-    } catch (error) {
-      return next(error);
-    }
-  });
 
-  return router;
+      req.session.messages.push({
+        text: 'Your account created successfully',
+        type: 'success',
+      })
+      return res.redirect('/doctor/registration')
+    } catch (error) {
+      return next(error)
+    }
+  })
+
+  return router
 }

@@ -1,5 +1,5 @@
 // import { doc } from "prettier";
-import { doctor } from "../models/DoctorModel.js";
+import { Doctor } from '../models/DoctorModel.js'
 
 export class doctorController {
   /**
@@ -24,50 +24,26 @@ export class doctorController {
     qualifications,
     languages,
     abn,
-    street,
-    pinCode
+    phoneNumber,
+    address,
+    state,
+    pinCode,
   ) {
-    try {
-      const doctor = new doctor();
-      doctor.firstName = firstName;
-      doctor.lastName = lastName;
-      doctor.dateOfBirth = dateOfBirth;
-      doctor.registrationNumber = registrationNumber;
-      doctor.qualifications = qualifications;
-      doctor.languages = languages;
-      doctor.abn = abn;
-      doctor.street = street;
-      doctor.pinCode = pinCode;
-      const savedDoctor = await doctor.save();
-      return savedDoctor;
-    } catch (error) {
-      return error;
-    }
+    const doctor = new Doctor()
+    doctor.firstName = firstName
+    doctor.lastName = lastName
+    doctor.dateOfBirth = dateOfBirth
+    doctor.registrationNumber = registrationNumber
+    doctor.qualifications = qualifications
+    doctor.languages = languages
+    doctor.abn = abn
+    doctor.address = address
+    doctor.state = state
+    doctor.pinCode = pinCode
+    const savedDoctor = await doctor.save()
+    return savedDoctor
   }
-
-  /**
-   * Finds a user by id
-   * @param {registrationNumber} registrationNumber
-   * @returns a user
-   */
-  static async findById(registrationNumber) {
-    try {
-      return doctor.findById(registrationNumber).exec();
-    } catch (error) {
-      return error;
-    }
-  }
-
-  static async getDoctor() {
-    return doctor.find().sort({ createdAt: -1 }).exec();
-  }
-
-  /**
-   * Delete a user
-   * @param {int} registrationNumber
-   * @returns
-   */
-  static async deleteDoctor(registrationNumber) {
-    return User.findByIdAndDelete(registrationNumber);
+  catch(error) {
+    return error
   }
 }
