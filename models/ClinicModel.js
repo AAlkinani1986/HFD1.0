@@ -9,12 +9,12 @@ const ClinicSchema = mongoose.Schema(
     Rnumber: {
       type: Number,
       required: true,
-      
+      index: { unique: true }
     },
     ABN: {
-         type: Number, 
+         type: String, 
          required: true,
-         index: { unique: true }
+         
     },
     Phone: {
       type: Number,
@@ -28,10 +28,15 @@ const ClinicSchema = mongoose.Schema(
         type: String,
         required: true,
       },
+    Code: {
+        type: String,
+        required: true,
+      },
     textarea: {
         type: String,
         required: true,
       },
+      
   });
 
 export const Clinic = mongoose.model('Clinic', ClinicSchema, 'Clinics')
