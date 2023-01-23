@@ -1,0 +1,65 @@
+<main>
+  <div class="container doctorTable">
+    <%- include('../partials/messages');%>
+
+      <table class="striped  centered highlight responsive-table " style="font-size: medium; font-weight: 600;">
+        <thead style="font-size: large; font-weight: bold;">
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date Of Birth</th>
+            <th>Registration Number</th>
+            <th>Qualifications</th>
+            <th>Consulting Days</th>
+            <th>Languages</th>
+            <th>ABN:</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <% doctors.forEach(function(doctor) { %>
+            <tr>
+              <td>
+                <%=doctor.firstName%>
+              </td>
+              <td>
+                <%=doctor.lastName%>
+              </td>
+              <td style="font-size: small;">
+                <%=doctor.dateOfBirth%>
+              </td>
+              <td>
+                <%=doctor.registrationNumber%>
+              </td>
+              <td>
+                <%=doctor.languages%>
+              </td>
+              <td>
+                <%=doctor.abn%>
+              </td>
+              <td>
+
+                <!-- <% if(user.verificationToken) {%>
+                  <a href="/user/verify/<%=user._id%>/<%=user.verificationToken%>" class=" btn-floating btn_check"
+                    title="Verify user"><i class="material-icons">check_circle</i></a>
+                  <%}%>
+
+                    <% if(user.resetToken) {%>
+                      <a href="/user/resetpassword/<%=user._id%>/<%=user.resetToken%>"
+                        class=" waves-effect waves-light btn-small" title="Reset password"><i
+                          class="material-icons">check_circle</i></a>
+                      <%}%>
+
+
+                        <a href="/user/delete/<%=user._id%>" class=" btn-floating btn_delete" title="Delete user"><i
+                            class="material-icons"> delete_forever</i></a> -->
+
+              </td>
+            </tr>
+            <%});%>
+        </tbody>
+      </table>
+
+  </div>
+  <!-- <script src="../../models/doctorModel.js"></script> -->
+</main>

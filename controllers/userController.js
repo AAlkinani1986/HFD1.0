@@ -1,5 +1,5 @@
-import { User } from '../models/UserModel.js'
-import ResetTokenModel from '../models/ResetTokenModel.js'
+import { User } from "../models/UserModel.js";
+import ResetTokenModel from "../models/ResetTokenModel.js";
 
 export class UserController {
   /**
@@ -9,9 +9,9 @@ export class UserController {
    */
   static async findByEmail(email) {
     try {
-      return User.findOne({ email }).exec()
+      return User.findOne({ email }).exec();
     } catch (error) {
-      return error
+      return error;
     }
   }
   /**
@@ -21,9 +21,9 @@ export class UserController {
    */
   static async findByUsername(username) {
     try {
-      return User.findOne({ username }).exec()
+      return User.findOne({ username }).exec();
     } catch (error) {
-      return error
+      return error;
     }
   }
   /**
@@ -33,9 +33,9 @@ export class UserController {
    */
   static async findByOccupation(occupation) {
     try {
-      return User.findOne({ occupation }).exec()
+      return User.findOne({ occupation }).exec();
     } catch (error) {
-      return error
+      return error;
     }
   }
   /**
@@ -49,15 +49,15 @@ export class UserController {
    */
   static async createUser(username, email, password, occupation) {
     try {
-      const user = new User()
-      user.email = email
-      user.password = password
-      user.username = username
-      user.occupation = occupation
-      const savedUser = await user.save()
-      return savedUser
+      const user = new User();
+      user.email = email;
+      user.password = password;
+      user.username = username;
+      user.occupation = occupation;
+      const savedUser = await user.save();
+      return savedUser;
     } catch (error) {
-      return error
+      return error;
     }
   }
   /**
@@ -68,12 +68,12 @@ export class UserController {
    */
   static async createPasswordResetToken(userId) {
     try {
-      const passwordReset = new ResetTokenModel()
-      passwordReset.userId = userId
-      const savedToken = await passwordReset.save()
-      return savedToken.token
+      const passwordReset = new ResetTokenModel();
+      passwordReset.userId = userId;
+      const savedToken = await passwordReset.save();
+      return savedToken.token;
     } catch (error) {
-      return error
+      return error;
     }
   }
   /**
@@ -87,9 +87,9 @@ export class UserController {
       return ResetTokenModel.findOne({
         token,
         userId,
-      }).exec()
+      }).exec();
     } catch (error) {
-      return error
+      return error;
     }
   }
   /**
@@ -103,9 +103,9 @@ export class UserController {
       return ResetTokenModel.findOneAndDelete({
         token,
         userId,
-      }).exec()
+      }).exec();
     } catch (error) {
-      return error
+      return error;
     }
   }
   /**
@@ -115,14 +115,14 @@ export class UserController {
    */
   static async changePassword(userId, password) {
     try {
-      const user = await User.findById(userId)
+      const user = await User.findById(userId);
       if (!user) {
-        throw new Error('User not found')
+        throw new Error("User not found");
       }
-      user.password = password
-      return user.save()
+      user.password = password;
+      return user.save();
     } catch (error) {
-      return error
+      return error;
     }
   }
   /**
@@ -132,9 +132,9 @@ export class UserController {
    */
   static async findById(id) {
     try {
-      return User.findById(id).exec()
+      return User.findById(id).exec();
     } catch (error) {
-      return error
+      return error;
     }
   }
 
@@ -145,9 +145,9 @@ export class UserController {
    */
   static async getResetToken(userId) {
     try {
-      return ResetTokenModel.findOne({ userId }).exec()
+      return ResetTokenModel.findOne({ userId }).exec();
     } catch (error) {
-      return error
+      return error;
     }
   }
 
@@ -157,7 +157,7 @@ export class UserController {
    * @returns a list of users
    */
   static async getUsers() {
-    return User.find().sort({ createdAt: -1 }).exec()
+    return User.find().sort({ createdAt: -1 }).exec();
   }
 
   /**
@@ -166,6 +166,6 @@ export class UserController {
    * @returns
    */
   static async deleteUser(id) {
-    return User.findByIdAndDelete(id)
+    return User.findByIdAndDelete(id);
   }
 }
