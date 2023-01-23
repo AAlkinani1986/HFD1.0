@@ -1,8 +1,15 @@
-
 import { Clinic } from '../models/ClinicModel.js'
 
 export class ClinicController {
-    /**
+
+    static async findByCname(Cname) {
+        try {
+          return Clinic.findOne({ Cname }).exec()
+        } catch (error) {
+          return error
+        }
+      }
+   /**
    * Creates
     * @param {Cname} Cname
     * @param {Rnumber} Rnumber
@@ -10,54 +17,25 @@ export class ClinicController {
     *  @param {Phone} Phone
     * @param {Date} Date
     * @param {Address} Address
-    *  @param {textarea} textarea
+    * @param {Code} Code
+    * @param {textarea} textarea
     * @returns save result
     */
-   static async createClinic(Cname, Rnumber, ABN, Phone, Date ,Address,textarea) {
-     try {
-       const Clinic = new Clinic()
-       Clinic.Cname = Cname;
-       Clinic.Rnumber = Rnumber;
-       Clinic.ABN = ABN;
-       Clinic.Phone = Phone;
-       Clinic.Date = Date;
-       Clinic.Address= Address;
-       Clinic.textarea =textarea;
-       const savedClinic = await Clinic.save()
+   static async createclinic(Cname, Rnumber, ABN, Phone, Date ,Address,Code,textarea) {
+       const clinic = new Clinic()
+       clinic.Cname = Cname;
+       clinic.Rnumber = Rnumber;
+       clinic.ABN = ABN;
+       clinic.Phone = Phone;
+       clinic.Date = Date;
+       clinic.Address = Address;
+       clinic.Code = Code;
+       clinic.textarea =textarea;
+       const savedClinic = await clinic.save()
        return savedClinic
-     } catch (error) {
-       return error
-     }
    }
-   /**
-   * Finds a user by id
-   * @param {ABN} ABN
-   * @returns a user
-   */
-  static async findById(ABN) {
-    try {
-      return doctor.findById(ABN).exec();
-    } catch (error) {
-      return error;
-    }
-  }
-
-    /**
-   * @param {ABN} ABN
-   * @returns a Clinic
-   */
-  static async getClinic() {
-    return Clinic.find().sort({ createdAt: -1 }).exec()
-  }
-
-  /**
-   * Delete a Clinic
-   * @param {int} ABN
-   * @returns
-   */
-  static async deleteClinic(ABN) {
-    return Clinic.findByIdAndDelete(ABN)
-  }
-
+       catch(error) {
+        return error
+   }
 }
 
