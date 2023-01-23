@@ -1,4 +1,4 @@
-<div class="doctor">
+<div class="doctor-registration">
   <div>
     <nav>
       <div class="nav-wrapper #1de9b6 teal accent-3">
@@ -23,14 +23,14 @@
       <h2>Your details</h2>
 
       <div class="row">
-        <form class="col s12">
+        <form action="/doctor/registration" method="post" class="col s12">
           <div class="row">
             <div class="input-field col s6">
-              <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+              <input placeholder="Placeholder" id="first_name" type="text" class="validate" name="firstName">
               <label for="first_name">First Name</label>
             </div>
             <div class="input-field col s6">
-              <input id="last_name" type="text" class="validate">
+              <input id="last_name" type="text" class="validate" name="lastName">
               <label for="last_name">Last Name</label>
             </div>
           </div>
@@ -54,17 +54,17 @@
           </div> -->
           <div class="row">
             <div class="input-field col s6">
-              <input id="dob" type="date" class="validate" placeholder="Date Of Birth">
+              <input id="dob" type="date" class="validate" placeholder="Date Of Birth" name="dateOfBirth">
               <label for="dob">Date Of Birth:</label>
             </div>
             <div class="input-field col s6">
-              <input id="Registration" type="number" class="validate">
+              <input id="Registration" type="number" class="validate" name="registrationNumber">
               <label for="Registration">Registration Number:</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input id="qualification" type="text" class="validate" placeholder="Qualification">
+              <input id="qualification" type="text" class="validate" placeholder="Qualification" name="qualifications">
               <label for="qualification">Qualifications</label>
             </div>
           </div>
@@ -76,43 +76,43 @@
             <br><br><br>
             <p>
               <label>
-                <input name="Monday" type="checkbox" />
+                <input name="monday" type="checkbox" value="monday" />
                 <span>Monday</span>
               </label>
             </p>
             <p>
               <label>
-                <input name="Tuesday" type="checkbox" />
+                <input name="tuesday" type="checkbox" value="tuesday" />
                 <span>Tuesday</span>
               </label>
             </p>
             <p>
               <label>
-                <input name="Wednesday" type="checkbox" />
+                <input name="wednesday" type="checkbox" value="wednesday" />
                 <span>Wednesday</span>
               </label>
             </p>
             <p>
               <label>
-                <input name="Thrusday" type="checkbox" />
+                <input name="thrusday" type="checkbox" value="thrusday" />
                 <span>Thrusday</span>
               </label>
             </p>
             <p>
               <label>
-                <input name="Friday" type="checkbox" />
+                <input name="friday" type="checkbox" value="friday" />
                 <span>Friday</span>
               </label>
             </p>
             <p>
               <label>
-                <input name="Saturday" type="checkbox" />
+                <input name="saturday" type="checkbox" value="saturday" />
                 <span>Saturday</span>
               </label>
             </p>
             <p>
               <label>
-                <input name="Sunday" type="checkbox" />
+                <input name="sunday" type="checkbox" value="sunday" />
                 <span>Sunday</span>
               </label>
             </p>
@@ -132,36 +132,36 @@
             </div> -->
           <div class="row">
             <div class="input-field col s12">
-              <input id="Language" type="text" class="validate" placeholder="Languages">
+              <input id="Language" type="text" class="validate" placeholder="Languages" name="languages">
               <label for="Languages">Languages:</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input id="abn" type="text" class="validate" placeholder="ABN">
+              <input id="abn" type="text" class="validate" placeholder="ABN" name="abn">
               <label for="abn">ABN:</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input id="contact" type="number" class="validate" placeholder="Contact Details">
+              <input id="contact" type="number" class="validate" placeholder="Contact Details" name="contactDeatails">
               <label for="contact">Contact Details:</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s6">
-              <input id="address" type="text" class="validate" placeholder="Street, Suburb">
+              <input id="address" type="text" class="validate" placeholder="Street, Suburb" name="street">
               <label for="address">Address:</label>
             </div>
             <div class="row">
               <div class="input-field col s6">
-                <input id="address" type="text" class="validate" placeholder="State">
+                <input id="address" type="text" class="validate" placeholder="State" name="street">
                 <!-- <label for="address">Contact Details:</label> -->
               </div>
             </div>
             <div class="row">
               <div class="input-field col offset-s4 s4">
-                <input id="pinCode" type="number" class="validate" placeholder="Pin Code">
+                <input id="pinCode" type="number" class="validate" placeholder="Pin Code" name="pinCode">
                 <label for="pinCode">Pin Code:</label>
               </div>
             </div>
