@@ -1,4 +1,4 @@
-import e, { Router } from 'express'
+import { Router } from 'express'
 
 import { UserController } from '../../controllers/UserController.js'
 import { validation } from '../../server/middlewares/validation.js'
