@@ -1,5 +1,5 @@
 // import { doc } from "prettier";
-import { doctor } from "../models/doctorModel.js";
+import { doctor } from "../models/DoctorModel.js";
 
 export class doctorController {
   /**
