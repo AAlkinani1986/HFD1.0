@@ -1,3 +1,125 @@
 <%- include('../partials/header');%> 
+<div class="container patientContainer">
+<div class="patientForm">
 
-<h1>patient registration</h1>
+    <div class="patientFormTop">
+        <div class="uploadImage">
+
+            <img  width="150" src="../../public/images/patient/sample.jpg">
+            <div class="file-field input-field">
+                <div class="btn">
+                  <span>File</span>
+                  <input type="file" id="patient_img" name="patientImg" accept="image/*">
+                </div>
+                <div class="file-path-wrapper" style="width:200px;">
+                  <input class="file-path validate" type="text">
+                </div>
+        </div>
+        </div>
+  <!--left image upload  -->
+<div class="uploadInfo">
+    <div class="row">
+        <div class="input-field input_patient col s6">
+          <input name="firstName" id="first_name" type="text" class="validate">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field input_patient col s6">
+          <input name="middleName"id="middle_name" type="text" class="validate">
+          <label for="middle_name">Middle Name</label>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="input-field input_patient col s6">
+            <input name="lastName" id="last_name" type="text" class="validate">
+            <label for="last_name">Last Name</label>
+          </div>
+        <div class="input-field input_patient col s6">
+          <input name="phoneNumber"  id="phone_number" type="text" class="validate">
+          <label for="phone_number">Phone Number</label>
+        </div>
+        
+      </div>
+      <div class="row">
+        <div class="input-field input_patient col s6">
+            <input id="dateOfBirth" type="text" class="datepicker"> 
+            <label for="dateOfBirth">Date Of Birth</label> 
+      </div>
+    
+    
+    </div>
+
+
+</div>
+
+<!-- right input -->
+    </div>
+    <div class="patientFormButton">
+       <div class="patientFormButtonLeft">
+       <div class="row">
+            <div class="input-field input_patient col s12">
+                <input id="Address" type="text" > 
+                <label for="Address">Address</label> 
+                
+          </div>
+          <div class="row input_patient">
+            <div class="input-field col s6">
+              <input class="number" name="height" id="height" type="number" >
+              <label for="height">HightCM</label>
+            </div>
+            <div class=" input-field  col s6">
+              <input name="weight"id="weight" type="number" class="validate number">
+              <label for="weight">WeightKG</label>
+            </div>
+          </div>
+          <div class="row  input_patient">
+            <div class="input-field input_patient col s6">
+              <input  name="gender" id="Gender" type="text" >
+              <label for="Gender">Gender</label>
+            </div>
+            <div class=" input-field input_patient  col s6">
+              <input name="BMI"id="BMI" type="text" class="validate ">
+              <label for="BMI">BMI</label>
+            </div>
+          </div> 
+       </div>
+
+  <button class="btn btnNewPatient waves-effect waves-light center" type="submit" name="action ">Submit
+    
+  </button>
+       </div>
+       <div class="patientFormButtonRight">
+        <div class="medicare">
+           <h6 class="medicareTitle">Medicare Card Details</h6>
+           <p class="medicareSubTitle">MedicareCard</p>
+          <div class="medicareInput">
+            <div class="input-field medicareNumber col s6">
+                <input name="medicareNumber"id="medicare_number" type="text" > 
+                <label for="medicare_number">Medicare Number</label> 
+                
+            </div>
+            <div class="input-field medicareFullName  col s6">
+                <input name="fullName"id="full_name" type="text" > 
+                <label for="full_name">Full name and Number</label> 
+                
+            </div>
+           <div class="validTo">
+            <span >VALIDTO: </span>
+            <input class="validDate" type="date" name="validDate" id="medicareValidDate">
+           </div>
+        </div>
+        </div>
+       </div>
+    </div>
+</div>
+<div class="medicalHistory">
+<div class="row">
+        <div class="input-field col s12">
+          <textarea name="medicalHistory"id="medical_History" class="materialize-textarea"></textarea>
+          <label for="medical_History">Medicare History</label>
+        </div>
+      </div>
+ 
+</div>
+</div>
+<script src="../../public/js/patient/patient.js"></script>

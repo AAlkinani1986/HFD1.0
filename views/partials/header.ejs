@@ -1,22 +1,22 @@
 
-  <nav>
-    <div class="nav-wrapper green darken-4">
+  <nav >
+    <div class="nav-wrapper teal darken-4" style="padding:0px 15px 10px 15px;">
     <% if(locals.user) {%>
-        <a href="/" class="brand-logo center">welcome back <%=user.username%> </a>
+        <a style="font-size:x-large;" href="/" class="brand-logo center">Welcome back&ensp;<%=user.username%> </a>
         <%} else {%>
                 
         
      
       <%}%>
-      <a href="/" class="brand-logo left">HFD</a>
+      <a href="/" style="font-size:x-large;" class="brand-logo left">HFD</a>
       <% if(locals.user) {%>
  
-          <a href="/user/logout" class="brand-logo right" ></i>
+          <a style="font-size:x-large;" href="/user/logout" class="brand-logo right" ></i>
             Logout </a>
  
         <%} else {%>
 
-            <a href="/user/login" class="brand-logo right"></i>
+            <a style="font-size:x-large;" href="/user/login" class="brand-logo right"></i>
               Login</a>
    
           <%}%>

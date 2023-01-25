@@ -1,0 +1,97 @@
+.patientContainer{
+    margin-top: 150px;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+ width: auto;
+    
+}
+.uploadInfo{
+   
+    margin-left: 30px;
+    margin-right: auto;
+    width: 50%;
+}
+
+.input_patient{
+    margin: 0 !important;
+}
+.uploadImage{
+    margin-top: 15px;
+    width: 40%;
+}
+.patientForm{
+    padding-top: 5px;
+width: 75%;
+  margin-right: 10px;
+}
+.patientFormTop{
+margin-bottom: 10px;
+    display: flex;
+
+}
+
+.patientFormButton{
+    display: flex;
+
+}
+.patientFormButtonLeft{
+    width: 40%;
+   
+}
+.patientFormButtonRight{
+    margin-top: 20px;
+    padding-left: 20px;
+    margin-left: 25px;
+    width: 55%;
+    border: 1px solid rgb(31, 129, 31);
+}
+.medicareTitle{
+    margin-top: -10px;
+    background-color: white;
+    width: fit-content;
+    padding: 0px 1px;
+}
+.medicareSubTitle{
+    width: fit-content;
+    margin-top: -5px;
+    margin-left: auto;
+    margin-right: 10px;
+    color: gold;
+    background-color: green;
+}
+.medicareNumber{
+    width: 60%;
+    margin-left:20%;
+    margin-right: auto;
+}
+.medicareFullName{
+    margin-top: 0px;
+    width: 50%;
+}
+.validDate{
+   color: green;
+    width: fit-content !important;
+}
+.validTo{
+    width: fit-content;
+    margin-left: auto !important;
+    margin-right: 3px !important;
+}
+.btnNewPatient{
+    width: 100%;
+    margin-top: 20px;
+}
+.medicalHistory{
+    
+    
+border: 1px solid rgb(31, 129, 31);
+padding: 5px;
+
+width: 22%;
+
+}
+label{
+    font-size: medium;
+    font-weight: 700;
+}
