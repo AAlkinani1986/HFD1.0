@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
 
 const doctorSchema = mongoose.Schema({
   firstName: {
@@ -36,8 +36,11 @@ const doctorSchema = mongoose.Schema({
   zibCode: {
     type: String,
   },
-})
+  doctorId: {
+    type: String,
+  },
+});
 
 // var doctorModel = mongoose.model("doctor", doctorSchema);
 
-export const Doctor = mongoose.model('doctor', doctorSchema, 'doctors')
+export const Doctor = mongoose.model("doctor", doctorSchema, "doctors");

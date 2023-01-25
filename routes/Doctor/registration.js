@@ -1,18 +1,19 @@
-import { Router } from 'express'
-import { doctorController } from '../../controllers/doctorController.js'
+import { Router } from "express";
+import { doctorController } from "../../controllers/doctorController.js";
 
-const router = Router()
+const router = Router();
 
 export function registrationDoctor() {
-  router.get('/registration', function (req, res) {
-    res.render('doctor/registration', {
-      page: 'new doctor',
-    })
-  })
+  router.get("/registration", function (req, res) {
+    console.log("user", req.session.user._id);
+    res.render("doctor/registration", {
+      page: "new doctor",
+    });
+  });
 
-  router.post('/registration', async (req, res, next) => {
+  router.post("/registration", async (req, res, next) => {
     try {
-      console.log('data', req.body)
+      console.log("data", req.body);
       await doctorController.createDoctor(
         req.body.firstName,
         req.body.lastName,
@@ -25,7 +26,8 @@ export function registrationDoctor() {
         req.body.address,
         req.body.state,
         req.body.zibCode,
-      )
+        req.session.user._id
+      );
 
       // const validationErrors = validation.validationResult(req);
       // const errors = [];
@@ -67,14 +69,14 @@ export function registrationDoctor() {
       // }
 
       req.session.messages.push({
-        text: 'Your account created successfully',
-        type: 'success',
-      })
-      return res.redirect('/doctor/registration')
+        text: "Your account created successfully",
+        type: "success",
+      });
+      return res.redirect("/doctor/registration");
     } catch (error) {
-      return next(error)
+      return next(error);
     }
-  })
+  });
 
-  return router
+  return router;
 }
