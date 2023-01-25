@@ -1,16 +1,16 @@
 import mongoose from 'mongoose'
 
 const ClinicSchema = mongoose.Schema({
-  Cname: {
+  Clinicname: {
     type: String,
     required: true,
   },
-  Rnumber: {
+  Registernumber: {
     type: Number,
     required: true,
   },
   ABN: {
-    type: Number,
+    type: String,
     required: true,
     index: { unique: true },
   },

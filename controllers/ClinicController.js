@@ -11,8 +11,8 @@ export class ClinicController {
       }
    /**
    * Creates
-    * @param {Cname} Cname
-    * @param {Rnumber} Rnumber
+    * @param {Clinicname} Clinicname
+    * @param {Registernumber} Registernumber
     * @param {ABN} ABN
     *  @param {Phone} Phone
     * @param {Date} Date
@@ -21,10 +21,10 @@ export class ClinicController {
     * @param {textarea} textarea
     * @returns save result
     */
-   static async createclinic(Cname, Rnumber, ABN, Phone, Date ,Address,Code,textarea) {
+   static async createclinic(Clinicname, Registernumber, ABN, Phone, Date ,Address,Code,textarea) {
        const clinic = new Clinic()
-       clinic.Cname = Cname;
-       clinic.Rnumber = Rnumber;
+       clinic.Clinicname = Clinicname;
+       clinic.Registernumber = Registernumber;
        clinic.ABN = ABN;
        clinic.Phone = Phone;
        clinic.Date = Date;

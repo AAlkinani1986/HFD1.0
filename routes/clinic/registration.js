@@ -15,8 +15,8 @@ export function registrationClinic() {
       console.log("data", req.body);
       
       await ClinicController.createclinic(
-        req.body.Cname,
-        req.body.Rnumber,
+        req.body.Clinicname,
+        req.body.Registernumber,
         req.body.ABN,
         req.body.Phone,
         req.body.Date,
