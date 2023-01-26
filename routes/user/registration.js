@@ -23,7 +23,6 @@ export function registrationRouter() {
     validation.validateOccupied,
     async (req, res, next) => {
       try {
-        console.log('data', req.body)
         const validationErrors = validation.validationResult(req)
         const errors = []
         if (!validationErrors.isEmpty()) {

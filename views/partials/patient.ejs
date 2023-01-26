@@ -1,0 +1,131 @@
+<div class="container patientContainer" style="margin-bottom:100px; margin-top: 50px;">
+
+    <div class="patientForm">
+    <form enctype="multipart/form-data" action="" method="">
+    
+    
+        <div class="patientFormTop">
+            <div class="uploadImage">
+    
+                <img  width="150" src="../../public/data/uploads/patient/<%=patient.patientId%>.jpg">
+                <div class="file-field input-field">
+                    <div  class="btn disabled">
+                      <span>File</span>
+                      <input name="avatar" type="file" id="patient_img" accept="image/*">
+                    </div>
+                    <div class="file-path-wrapper" style="width:200px;">
+                      <input id="file" class="file-path validate" type="text">
+                    </div>
+            </div>
+            </div>
+      <!--left image upload  -->
+    <div class="uploadInfo">
+        <div class="row">
+            <div class="input-field input_patient col s6">
+              <input disabled name="firstName" id="first_name" type="text" class="validate">
+              <label for="first_name">   <%=patient.firstName%></label>
+            </div>
+            <div class="input-field input_patient col s6">
+              <input disabled name="middleName"id="middle_name" type="text" class="validate">
+              <label style="font-weight: bolder; color: black;" for="middle_name"> <%=patient.middleName%></label>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="input-field input_patient col s6">
+                <input disabled name="lastName" id="last_name" type="text" class="validate">
+                <label for="last_name"> <%=patient.lastName%></label>
+              </div>
+            <div class="input-field input_patient col s6">
+              <input disabled name="phoneNumber"  id="phone_number" type="text" class="validate">
+              <label for="phone_number"> <%=patient.phoneNumber%></label>
+            </div>
+            
+          </div>
+          <div class="row">
+            <div class="input-field input_patient col s6">
+                <input disabled name="dateOfBirth" id="dateOfBirth" type="text" class="datepicker"> 
+                <label for="dateOfBirth"> <%=patient.dateOfBirth%></label> 
+          </div>
+        
+        
+        </div>
+    
+    
+    </div>
+    
+    <!-- right input -->
+        </div>
+        <div class="patientFormButton">
+           <div class="patientFormButtonLeft">
+           <div class="row">
+                <div class="input-field input_patient col s12">
+                    <input disabled id="Address" type="text" > 
+                    <label for="Address"><%=patient.address%></label> 
+                    
+              </div>
+              <div class="row input_patient">
+                <div class="input-field col s6">
+                  <input class="number" name="height" id="height" type="number" >
+                  <label for="height"><%=patient.height%></label>
+                </div>
+                <div class=" input-field  col s6">
+                  <input disabled name="weight"id="weight" type="number" class="validate number">
+                  <label for="weight"><%=patient.weight%> KG</label>
+                </div>
+              </div>
+              <div class="row  input_patient">
+                <div class="input-field input_patient col s6">
+                  <input disabled name="gender" id="Gender" type="text" >
+                  <label for="Gender"><%=patient.Gender%></label>
+                </div>
+                <div class=" input-field input_patient  col s6">
+                  <input disabled name="BMI"id="BMI" type="text" class="validate ">
+                  <label for="BMI"><%=patient.BMI%></label>
+                </div>
+              </div> 
+           </div>
+    
+      <button class="btn btnNewPatient waves-effect waves-light  red darken-4  center" type="submit" name="action ">Edit
+        
+      </button>
+           </div>
+           <div class="patientFormButtonRight">
+            <div class="medicare">
+               <h6 class="medicareTitle">Medicare Card Details</h6>
+               <p class="medicareSubTitle">MedicareCard</p>
+              <div class="medicareInput">
+                <div class="input-field medicareNumber col s6">
+                    <input disabled name="medicareNumber"id="medicare_number" type="text" > 
+                    <label for="medicare_number"><%=patient.medicareNum%></label> 
+                    
+                </div>
+                <div class="input-field medicareFullName  col s6">
+                    <input name="fullName"id="full_name" type="text" > 
+                    <label for="full_name"><%=patient.fullName%></label> 
+                    
+                </div>
+               <div class="validTo">
+                <span >VALIDTO: </span>
+                <input style="font-weight:bolder; color: black;" disabled value="<%=patient.medicareEXP%>" class="validDate" type="date" name="validDate" id="medicareValidDate">
+               </div>
+            </div>
+            </div>
+           </div>
+        </div>
+    </div>
+    <div class="medicalHistory">
+    <div class="row">
+            <div class="input-field col s12">
+              <textarea name="medicalHistory"id="medical_History" class="materialize-textarea"></textarea>
+              <label for="medical_History"><%=patient.medicalHistory%></label>
+            </div>
+          </div>
+    
+    
+    
+    </form>
+     
+    </div>
+    </div>
+    <script src="../../public/js/patient/patient.js"></script>

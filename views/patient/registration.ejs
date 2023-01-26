@@ -1,6 +1,10 @@
 <%- include('../partials/header');%> 
-<div class="container patientContainer">
+<%- include('../partials/messages');%>
+<div class="container patientContainer" style="margin-bottom: 100px;">
+
 <div class="patientForm">
+<form enctype="multipart/form-data" action="registration" method="post">
+
 
     <div class="patientFormTop">
         <div class="uploadImage">
@@ -9,10 +13,10 @@
             <div class="file-field input-field">
                 <div class="btn">
                   <span>File</span>
-                  <input type="file" id="patient_img" name="patientImg" accept="image/*">
+                  <input name="avatar" type="file" id="patient_img" accept="image/*">
                 </div>
                 <div class="file-path-wrapper" style="width:200px;">
-                  <input class="file-path validate" type="text">
+                  <input id="file" class="file-path validate" type="text">
                 </div>
         </div>
         </div>
@@ -42,7 +46,7 @@
       </div>
       <div class="row">
         <div class="input-field input_patient col s6">
-            <input id="dateOfBirth" type="text" class="datepicker"> 
+            <input name="dateOfBirth" id="dateOfBirth" type="text" class="datepicker"> 
             <label for="dateOfBirth">Date Of Birth</label> 
       </div>
     
@@ -58,7 +62,7 @@
        <div class="patientFormButtonLeft">
        <div class="row">
             <div class="input-field input_patient col s12">
-                <input id="Address" type="text" > 
+                <input name="address"id="Address" type="text" > 
                 <label for="Address">Address</label> 
                 
           </div>
@@ -119,6 +123,10 @@
           <label for="medical_History">Medicare History</label>
         </div>
       </div>
+
+
+
+</form>
  
 </div>
 </div>
