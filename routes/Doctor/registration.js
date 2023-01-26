@@ -20,6 +20,7 @@ export function registrationDoctor() {
         req.body.dateOfBirth,
         req.body.registrationNumber,
         req.body.qualifications,
+        req.body.clinic,
         req.body.languages,
         req.body.abn,
         req.body.phoneNumber,
