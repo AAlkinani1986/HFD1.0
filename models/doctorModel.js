@@ -21,6 +21,9 @@ const doctorSchema = mongoose.Schema({
   qualifications: {
     type: String,
   },
+  clinic: {
+    type: String,
+  },
   languages: {
     type: String,
   },

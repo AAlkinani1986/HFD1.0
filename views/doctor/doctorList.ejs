@@ -2,7 +2,7 @@
   <div class="container doctorTable">
     <%- include('../partials/messages');%>
 
-      <table class="striped  centered highlight responsive-table " style="font-size: medium; font-weight: 600;">
+      <table class="striped centered highlight responsive-table " style="font-size: medium; font-weight: 600;">
         <thead style="font-size: large; font-weight: bold;">
           <tr>
             <th>First Name</th>
@@ -10,7 +10,7 @@
             <th>Date Of Birth</th>
             <th>Registration Number</th>
             <th>Qualifications</th>
-            <th>Consulting Days</th>
+            <th>Clinic Name</th>
             <th>Languages</th>
             <th>ABN:</th>
           </tr>
@@ -30,6 +30,12 @@
               </td>
               <td>
                 <%=doctor.registrationNumber%>
+              </td>
+              <td>
+                <%=doctor.qualifications%>
+              </td>
+              <td>
+                <%=doctor.clinic%>
               </td>
               <td>
                 <%=doctor.languages%>
@@ -62,4 +68,5 @@
 
   </div>
   <script src="../../models/doctorModel.js"></script>
+  <link rel="stylesheet" href="../../public/css/doctor/doctor.css" />
 </main>

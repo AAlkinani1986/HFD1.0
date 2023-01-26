@@ -10,6 +10,7 @@ export class doctorController {
    * @param {dateOfBirth} dateOfBirth
    *  @param {registrationNumber} registrationNumber
    * @param {qualifications} qualifications
+   * * @param {clinic} clinic
    *@param {languages} languages
    *@param {abn} abn
    *@param {street} street
@@ -22,6 +23,7 @@ export class doctorController {
     dateOfBirth,
     registrationNumber,
     qualifications,
+    clinic,
     languages,
     abn,
     phoneNumber,
@@ -36,6 +38,7 @@ export class doctorController {
     doctor.dateOfBirth = dateOfBirth;
     doctor.registrationNumber = registrationNumber;
     doctor.qualifications = qualifications;
+    doctor.clinic = clinic;
     doctor.languages = languages;
     doctor.abn = abn;
     doctor.address = address;
