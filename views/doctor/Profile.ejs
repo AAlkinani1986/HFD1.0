@@ -1,28 +1,14 @@
 <div class="doctor-profile">
 
   <div>
-    <%- include('../partials/header');%>
+    <%- include('../partials/doctorProfileheaders');%>
       <div class="container">
 
 
         <%- include('../partials/messages');%>
-
-          <nav>
-            <div class="nav-wrapper #1de9b6 teal accent-3">
-              <a href="#" class="signout">Sign Out</a>
-              <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li>
-                <li class="active"><a href="./Home">Home</a></li>
-                </li>
-                <li><a href="././Profile">Profile</a></li>
-                <li><a href="Patient.ejs">Patient</a></li>
-                <li><a href="./registration">Registration</a></li>
-                <!-- <li><a href="BloodTest.ejs">Blood Test Request</a></li> -->
-              </ul>
-            </div>
-          </nav>
           <div class="mt-4 p-5 bg-primary text-white rounded text-center">
-            <h1>Welcome Doctor</h1>
+            <h1>Welcome Doctor <%=doctor.firstName%>
+            </h1>
             <!-- <p>Welcome to visit our clinic. Thank you for your trust.</p> -->
           </div>
           <!-- <br> -->
@@ -39,7 +25,7 @@
                   </label>
                 </div>
                 <div class="input-field col s6">
-                  <input id="last_name" type="text" class="validate" name="lastName">
+                  <input id="last_name" type="text" class="validate" name="lastName" value="<%=doctor.lastName%>">
                   <label for="last_name">Last Name</label>
                 </div>
               </div>
@@ -63,25 +49,28 @@
           </div> -->
               <div class="row">
                 <div class="input-field col s6">
-                  <input id="dob" type="date" class="validate" placeholder="Date Of Birth" name="dateOfBirth">
-                  <label for="dob">Date Of Birth:</label>
+                  <input id="dateOfBirth" type="text" class="validate" placeholder="Date Of Birth" name="dateOfBirth"
+                    value="<%=doctor.dateOfBirth%>">
+                  <label for="dateOfBirth">Date Of Birth:</label>
                 </div>
                 <div class="input-field col s6">
-                  <input id="Registration" type="number" class="validate" name="registrationNumber">
+                  <input id="Registration" type="number" class="validate" name="registrationNumber"
+                    value="<%=doctor.registrationNumber%>">
                   <label for="Registration">Registration Number:</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
                   <input id="qualification" type="text" class="validate" placeholder="Qualification"
-                    name="qualifications">
-                  <label for="qualification">Qualifications</label>
+                    name="qualifications" value="<%=doctor.qualifications%>">
+                  <label for=" qualification">Qualifications</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="clinic" type="text" class="validate" placeholder="Clinic Name" name="clinic">
-                  <label for="clinic">Clinic Name:</label>
+                  <input id="clinic" type="text" class="validate" placeholder="Clinic Name" name="clinic"
+                    value="<%=doctor.clinic%>">
+                  <label for=" clinic">Clinic Name:</label>
                 </div>
               </div>
               <!-- <div class="row">
@@ -148,17 +137,18 @@
             </div> -->
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="Language" type="text" class="validate" placeholder="Languages" name="languages">
+                  <input id="Language" type="text" class="validate" placeholder="Languages" name="languages"
+                    value="<%=doctor.languages%>">
                   <label for="Languages">Languages:</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="abn" type="text" class="validate" placeholder="ABN" name="abn">
+                  <input id="abn" type="text" class="validate" placeholder="ABN" name="abn" value="<%=doctor.abn%>">
                   <label for="abn">ABN:</label>
                 </div>
               </div>
-              <div class="row">
+              <!-- <div class="row">
                 <div class="input-field col s12">
                   <input id="contact" type="number" class="validate" placeholder="phone number" name="phoneNumber">
                   <label for="contact">Contact Details:</label>
@@ -173,7 +163,7 @@
                   <div class="input-field col s6">
                     <input id="address" type="text" class="validate" placeholder="State" name="state">
                     <!-- <label for="address">Contact Details:</label> -->
-                  </div>
+              <!-- </div>
                 </div>
                 <div class="row">
                   <div class="input-field col offset-s4 s4">
@@ -181,7 +171,7 @@
                     <label for="pinCode">Pin Code:</label>
                   </div>
                 </div>
-              </div>
+              </div>  -->
               <button class="btn waves-effect waves-light col offset-s4" type="submit" name="action" id="submit">Submit
               </button>
             </form>

@@ -1,24 +1,30 @@
 <nav>
     <div class="nav-wrapper teal darken-4" style="padding:0px 15px 10px 15px;">
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li> <a style="font-size:x-large;" href="/">Home </a></li>
+            <li> <a style="font-size:x-large;" href="#">Profile </a> </li>
+            <li> <a style="font-size:x-large;" href="#">Doctor List </a> </li>
+            <li> <a style="font-size:x-large;" href="/patient/recipes">Registration </a> </li>
+            <!-- <li> <a style="font-size:x-large;" href="#">Plan your week food </a> </li> -->
+        </ul>
+
+
+
+
+
+
+        <a href="/" style="font-size:x-large;" class="brand-logo center">HFD</a>
         <% if(locals.user) {%>
-            <a style="font-size:x-large;" href="/" class="brand-logo center">Welcome back&ensp;<%=user.username%> </a>
+
+            <a style="font-size:x-large;" href="/user/logout" class="brand-logo right"></i>
+                <img class="rounded" style="width: 50px;" alt=""> Logout </a>
+
             <%} else {%>
 
-
+                <a style="font-size:x-large;" href="/user/login" class="brand-logo right"></i>
+                    Login</a>
 
                 <%}%>
-                    <a href="/" style="font-size:x-large;" class="brand-logo left">HFD</a>
-                    <% if(locals.user) {%>
-
-                        <a style="font-size:x-large;" href="/user/logout" class="brand-logo right"></i>
-                            Logout </a>
-
-                        <%} else {%>
-
-                            <a style="font-size:x-large;" href="/user/login" class="brand-logo right"></i>
-                                Login</a>
-
-                            <%}%>
 
 
     </div>
