@@ -30,6 +30,9 @@ const ClinicSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  clinicId: {
+    type: String,
+  },
 })
 
 export const Clinic = mongoose.model('clinic', ClinicSchema, 'clinics')

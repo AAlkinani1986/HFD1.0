@@ -6,6 +6,7 @@ const router = Router()
 
 export function registrationClinic() {
   router.get('/registration', function (req, res) {
+    console.log("user", req.session.user._id);
     res.render('clinic/registration', {
       page: 'new clinic',
     })
@@ -23,6 +24,7 @@ export function registrationClinic() {
         req.body.Address,
         req.body.Code,
         req.body.textarea,
+        req.session.user._id
       );
       req.session.messages.push({
         text: "Your account created successfully",

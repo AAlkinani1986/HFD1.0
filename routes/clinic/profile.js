@@ -1,14 +1,24 @@
 import { Router } from 'express'
-import passport from 'passport'
+import { ClinicController } from '../../controllers/ClinicController.js';
 
 const router = Router()
 
 export function Profile() {
-  router.get('/profile', function (req, res) {
-    res.render('clinic/profile', {
-      page: 'new profile',
-    })
-  })
+  router.get("/profile", async (req, res, next) => {
+      const Clinic = await ClinicController.findOne(req.session.user._id)
+      console.log(Clinic)
+    res.render("clinic/profile", {
+      page: "profile Clinic",
+      clinic : Clinic
+    });
+  });
 
-  return router
+  return router;
 }
+// const getProjects = () => {
+//   $.get('/api/projects',(response) => {
+//       if(response.statusCode==200){
+//           addCards(response.data);
+//       }
+//   })
+// }

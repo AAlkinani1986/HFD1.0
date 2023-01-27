@@ -5,34 +5,31 @@
             <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
                     <img class="activator" src="/public/images/clinic.jpg" width="100px" height="150px">
+                    
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">Clinic profile</span>
-                    <p>All GPs are well-experienced and fully qualified (FRACGP).
-                        Doctors and nurses can speak English, Mandarin, Urdu, Sindhi, Hindi, Sinhalese, Bangla,
-                        Malayalam,
-                        Tagalog, and Italian.
-                        It is a purpose-built medical centre designed for patients' comfort and ease of access.
-                        Open 7 Days a week (Closed on Public Holidays)
-                        Large car park with approx. 80 spaces.
-                        Excellently equipped treatment room for minor procedures & emergencies,
-                        Large Waiting Room with televisions.
+                    <p>
+                        <label for="Name"><b>Clinic Services <%=clinic.textarea%></b></label>
                     </p>
                 </div>
                 <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Clinic profile<i
-                            class="material-icons right">close</i></span>
+                    <span class="card-title grey-text text-darken-4">Clinic profile
+                        <i class="material-icons right">close</i></span>
                     <div class="input-field col s6">
-                        <label for="Name"><b>Clinic Name</b></label>
+                        <label for="Name"><b>Clinic Name:- &nbsp; &nbsp;  <%=clinic.Clinicname%></b></label>
                     </div>
                     <div class="input-field col s6">
-                        <label for="Phone"><b>Phone</b></label>
+                        <label for="Phone"><b>Phone:- &nbsp; &nbsp;  <%=clinic.Phone%></b></label>
+
                     </div>
                     <div class="input-field col s6">
-                        <label for="Email"><b>Email</b></label>
+                        <label for="Email"><b>Email:- &nbsp; &nbsp; <%=clinic.Email%></b></label>
+                        
                     </div>
                     <div class="input-field col s6">
-                        <label for="Address"><b>Address</b></label>
+                        <label for="Address"><b>Address:- &nbsp; &nbsp;<%=clinic.Address%></b></label>
+                        
                     </div>
                     <button class="btn waves-effect waves-light" type="submit" name="action" id="btn">Edit
                     </button>

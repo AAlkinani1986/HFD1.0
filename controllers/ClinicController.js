@@ -2,13 +2,7 @@ import { Clinic } from '../models/ClinicModel.js'
 
 export class ClinicController {
 
-    static async findByCname(Cname) {
-        try {
-          return Clinic.findOne({ Cname }).exec()
-        } catch (error) {
-          return error
-        }
-      }
+    
    /**
    * Creates
     * @param {Clinicname} Clinicname
@@ -19,9 +13,10 @@ export class ClinicController {
     * @param {Address} Address
     * @param {Code} Code
     * @param {textarea} textarea
+    * @param {clinicId} clinicId
     * @returns save result
     */
-   static async createclinic(Clinicname, Registernumber, ABN, Phone, Date ,Address,Code,textarea) {
+   static async createclinic(Clinicname, Registernumber, ABN, Phone, Date ,Address,Code,textarea,clinicId) {
        const clinic = new Clinic()
        clinic.Clinicname = Clinicname;
        clinic.Registernumber = Registernumber;
@@ -31,11 +26,23 @@ export class ClinicController {
        clinic.Address = Address;
        clinic.Code = Code;
        clinic.textarea =textarea;
+       clinic.clinicId = clinicId;
        const savedClinic = await clinic.save()
        return savedClinic
    }
        catch(error) {
         return error
    }
+   /**
+   * Get all users
+   *
+   * @returns a list of users
+   */
+   static async findOne(Id) {
+    try {
+      return Clinic.findOne({ clinicId: Id }).exec()
+    } catch (error) {
+      return error
+    }
+  }
 }
-
