@@ -1,0 +1,26 @@
+<nav>
+    <div class="nav-wrapper teal darken-4" style="padding:0px 15px 10px 15px;">
+        <% if(locals.user) {%>
+            <a style="font-size:x-large;" href="/" class="brand-logo center">Welcome back&ensp;<%=user.username%> </a>
+            <%} else {%>
+
+
+
+                <%}%>
+                    <a href="/" style="font-size:x-large;" class="brand-logo left">HFD</a>
+                    <% if(locals.user) {%>
+
+                        <a style="font-size:x-large;" href="/user/logout" class="brand-logo right"></i>
+                            Logout </a>
+
+                        <%} else {%>
+
+                            <a style="font-size:x-large;" href="/user/login" class="brand-logo right"></i>
+                                Login</a>
+
+                            <%}%>
+
+
+    </div>
+
+</nav>

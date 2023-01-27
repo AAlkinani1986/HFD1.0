@@ -65,6 +65,14 @@ export class doctorController {
     }
   }
 
+  static async findOne(Id) {
+    try {
+      return Doctor.findOne({ doctorId: Id }).exec();
+    } catch (error) {
+      return error;
+    }
+  }
+
   /**
    * returns the password reset token for a user
    * @param {*} id

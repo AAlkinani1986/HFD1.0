@@ -1,23 +1,194 @@
-<div class="doctorProfile">
+<div class="doctor-profile">
+
   <div>
-    <nav>
-      <div class="nav-wrapper #1de9b6 teal accent-3">
-        <a href="#" class="signout">Sign Out</a>
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
-          <li>
-          <li class="active"><a href="./Home">Home</a></li>
-          </li>
-          <li><a href="./Profile">Profile</a></li>
-          <li><a href="Patient.ejs">Patient</a></li>
-          <li><a href="./registration.ejs">Registration</a></li>
-          <!-- <li><a href="BloodTest.ejs">Blood Test Request</a></li> -->
-        </ul>
+    <%- include('../partials/header');%>
+      <div class="container">
+
+
+        <%- include('../partials/messages');%>
+
+          <nav>
+            <div class="nav-wrapper #1de9b6 teal accent-3">
+              <a href="#" class="signout">Sign Out</a>
+              <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li>
+                <li class="active"><a href="./Home">Home</a></li>
+                </li>
+                <li><a href="././Profile">Profile</a></li>
+                <li><a href="Patient.ejs">Patient</a></li>
+                <li><a href="./registration">Registration</a></li>
+                <!-- <li><a href="BloodTest.ejs">Blood Test Request</a></li> -->
+              </ul>
+            </div>
+          </nav>
+          <div class="mt-4 p-5 bg-primary text-white rounded text-center">
+            <h1>Welcome Doctor</h1>
+            <!-- <p>Welcome to visit our clinic. Thank you for your trust.</p> -->
+          </div>
+          <!-- <br> -->
+          <h2>Your details</h2>
+
+          <div class="row">
+            <form action="" method="" class="col s12">
+              <div class="row">
+                <div class="input-field col s6">
+                  <input placeholder="firstName" id="first_name" type="text" class="validate" name="firstName"
+                    value="<%=doctor.firstName%>">
+
+                  <label for="first_name">First Name:
+                  </label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="last_name" type="text" class="validate" name="lastName">
+                  <label for="last_name">Last Name</label>
+                </div>
+              </div>
+              <!-- <div class="row">
+            <div class="input-field col s6">
+              <label for="billing_type">Billing Type:</label></div>
+              <div class="input-field col s12">
+                <p>
+                  <label>
+                    <input name="Billing" type="radio"   />
+                    <span>Mixed Billing</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input name="Billing" type="radio" />
+                    <span>Bulk Billing</span>
+                  </label>
+                </p>
+            </div>
+          </div> -->
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="dob" type="date" class="validate" placeholder="Date Of Birth" name="dateOfBirth">
+                  <label for="dob">Date Of Birth:</label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="Registration" type="number" class="validate" name="registrationNumber">
+                  <label for="Registration">Registration Number:</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="qualification" type="text" class="validate" placeholder="Qualification"
+                    name="qualifications">
+                  <label for="qualification">Qualifications</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="clinic" type="text" class="validate" placeholder="Clinic Name" name="clinic">
+                  <label for="clinic">Clinic Name:</label>
+                </div>
+              </div>
+              <!-- <div class="row">
+            <div class="input-field col s12">
+               <input id="consultingDays" type="text" class="validate"> -->
+              <!-- <label for="consultingDays">Consulting Days</label>
+            </div>
+            <br><br><br>
+            <p>
+              <label>
+                <input name="monday" type="checkbox" value="monday" />
+                <span>Monday</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="tuesday" type="checkbox" value="tuesday" />
+                <span>Tuesday</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="wednesday" type="checkbox" value="wednesday" />
+                <span>Wednesday</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="thrusday" type="checkbox" value="thrusday" />
+                <span>Thrusday</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="friday" type="checkbox" value="friday" />
+                <span>Friday</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="saturday" type="checkbox" value="saturday" />
+                <span>Saturday</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="sunday" type="checkbox" value="sunday" />
+                <span>Sunday</span>
+              </label>
+            </p>
+          </div> -->
+
+              <!-- <div class="row">
+            <div class="input-field col s3"> -->
+              <!-- <input id="consultingDays" type="text" class="validate"> -->
+              <!-- <label for="Language">Languages Spoken:</label>
+            </div>
+            <br><br><br>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="Language" type="text" class="validate">
+                <label for="Languages">Languages</label>
+              </div>
+            </div> -->
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="Language" type="text" class="validate" placeholder="Languages" name="languages">
+                  <label for="Languages">Languages:</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="abn" type="text" class="validate" placeholder="ABN" name="abn">
+                  <label for="abn">ABN:</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="contact" type="number" class="validate" placeholder="phone number" name="phoneNumber">
+                  <label for="contact">Contact Details:</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="address" type="text" class="validate" placeholder="Street, Suburb" name="address">
+                  <label for="address">Address:</label>
+                </div>
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input id="address" type="text" class="validate" placeholder="State" name="state">
+                    <!-- <label for="address">Contact Details:</label> -->
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col offset-s4 s4">
+                    <input id="pinCode" type="number" class="validate" placeholder="Pin Code" name="zibCode">
+                    <label for="pinCode">Pin Code:</label>
+                  </div>
+                </div>
+              </div>
+              <button class="btn waves-effect waves-light col offset-s4" type="submit" name="action" id="submit">Submit
+              </button>
+            </form>
+          </div>
+
+          <script src="../../public/js/doctor/doctor.js"></script>
+          <link rel="stylesheet" href="../../public/css/doctor/doctor.css" />
       </div>
-    </nav>
-
-
-
-
-
-    <script src="../../public/js/doctor/doctor.js"></script>
-    <link rel="stylesheet" href="../../public/css/doctor/doctor.css" />
+  </div>
+</div>
