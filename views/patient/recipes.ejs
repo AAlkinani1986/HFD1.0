@@ -1,18 +1,36 @@
 <%- include('../partials/userHeader');%>
     <%- include('../partials/messages');%>
-        <div class="container" style="margin-bottom: 50px;">
+        <div class="container" style="margin-bottom: 30px;">
             <div class="recipesForm">
                 <div class="recipes">
-                    <h1 id="recipes">Health daily life</h1>
-                    <<nav class="navbar bg-body-tertiary">
-                        <div class="container-fluid">
-                            <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-outline-success" type="submit">Search</button>
+                   <h1 id="recipes">Health daily life</h1>
+                    <nav>
+                        <div class="nav-wrapper">
+                            <form>
+                                <div class="input-field" placeholder="Search" aria-label="Search">
+                                    <input id="search" type="search" placeholder="Search Recipe">
+                                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                                    <i class="material-icons">close</i>
+                                </div>
                             </form>
                         </div>
-                        </nav>
+                    </nav>
                 </div>
-            </div>
-        </div>
-        <script src="../../public/js/patient/recipes.js"></script>
+             
+                <div class="row">
+                    <div class="col s6 m4">
+                      <div class="card">
+                        <div class="card-image">
+                          <img src="https://lh3.googleusercontent.com/Ai8Eh9oX72-2Hzwow-SpbtIDeT-xZXCsEobXM5Qw_uuG718oxEvvYhJJODUBMwas_tqauR0_IE7JqwTLGv8FJQ=w1280-h720-c-rj-v1-e365">
+                          <span class="card-title"> Grilled Shrimp</span>
+                          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                        </div>
+                        <div class="card-content">
+                          <p> Grilled Shrimp Satay with Peaches and Bok</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                  
+                  <div id="content">
+                <script src="../../public/js/patient/recipes.js"></script>
