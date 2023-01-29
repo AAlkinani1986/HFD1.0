@@ -26,8 +26,10 @@ function useApiData(data) {
                <img src="${data.hits[0].recipe.image}" class="card-img-top" alt="...">
                  <div class="card-body">
                   <h5 class="card-title"> ${data.hits[0].recipe.label} </h5>
+                  <i class="small material-icons waves-effect waves-light">favorite_border</i> 
+                  <a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a>
                  <p class="card-text">Source: ${data.hits[0].recipe.source}</p>
-                 <a href="${data.hits[0].recipe.url}" class="btn btn-primary"> Go somewhere </a>
+                 <a href="${data.hits[0].recipe.url}" class="btn btn-primary"> More Details</a>
                </div> 
              </div>`
 }
