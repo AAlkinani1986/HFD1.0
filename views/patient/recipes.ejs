@@ -1,10 +1,34 @@
 <%- include('../partials/userHeader');%>
-    <%- include('../partials/messages');%>
-                    
-  <div class="container" style="margin-bottom: 30px;">
+  <%- include('../partials/messages');%>
+    <div class="container initial">
+      <h1 id="recipes">Health daily life</h1>
+      <div class="nav-wrapper">
+        <form>
+          <div class="input-field" placeholder="Search" aria-label="Search">
+            <input id="search" type="search" placeholder="Search Recipe">
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+            <i class="material-icons">close</i>
+          </div>
+        </form>
+        <div class="search-result">
+          <div class="item">
+            <img
+              src="https://w0.peakpx.com/wallpaper/1021/826/HD-wallpaper-breakfast-yoghurt-berries-blueberry-strawberry-healthy-food.jpg"
+              alt="">
+            <div class="flex-container">
+              <h1 class="title">Blueberry</h1>
+              <a class="view-btn" href="#">View Recipe</a>
+            </div>
+            <p class="item-data">Calories: 50</p>
+          </div>
+        </div>
+      </div>
+      <script src="../../public/js/patient/recipes.js"></script>
+
+      <!--      <div class="container" style="margin-bottom: 30px;">
           <div class="recipesForm">
               <div class="recipes">
-                 <h1 id="recipes">Health daily life</h1     
+                 <h1 id="recipes">Health daily life</h1>     
                   <div class="row">
                     <div class="col s10 m8">         
                  <nav>
@@ -20,7 +44,7 @@
                   </nav>
               </div>
 
-            <!--     <div class="row">
+             <div class="row">
                     <div class="col s6 m4">
                       <div class="card">
                         <div class="card-image">
@@ -34,9 +58,9 @@
                       </div>
                     </div>
                   </div> -->
-                  
-                  <div id="content"> 
-                <script src="../../public/js/patient/recipes.js"></script>
-                <script src="https://developer.edamam.com/attribution/badge.js"></script>
-                <link rel="stylesheet" href="../../public/css/patient/recipes.css"/>
-                
+
+      <div id="content">
+
+        <script src="https://developer.edamam.com/attribution/badge.js"></script>
+        <link rel="stylesheet" href="../../public/css/patient/recipes.css" />
+        <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
