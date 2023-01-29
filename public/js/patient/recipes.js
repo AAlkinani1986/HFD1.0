@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-document.getElementById("recipes").style.color = "green";
-let searchButton = document.querySelector("#search");
-=======
+
 // document.getElementById('recipes').style.color = 'green'
 // let searchButton = document.querySelector("#search")
->>>>>>> 0ec21a4deb8258c797f05b04a71d7f2f3f6d2bdf
 
 const searchForm = document.querySelector('form');
 const searchResultDiv = document.querySelector('.search-result');
