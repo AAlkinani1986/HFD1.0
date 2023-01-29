@@ -1,4 +1,5 @@
 
+/*
 body {
           font-family: helvetica, arial, sans-serif;
           margin: 2em;
@@ -9,8 +10,7 @@ body {
           color: #373fff;
         }
                 
-
-/*
+*/
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap");
 * {
@@ -19,8 +19,8 @@ body {
   box-sizing: border-box;
 }
 img {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   object-fit: cover;
 }
 html {
@@ -35,7 +35,7 @@ section {
   align-items: center;
   justify-content: center;
   padding: 100px 0;
-  background-color: pink;
+  background-color:whitesmoke;
 }
 .container {
   width: 100%;
@@ -54,7 +54,7 @@ form {
   width: 90%;
   max-width: 400px;
   margin: 20px auto;
-  background-color: rgb(223, 223, 223);
+  background-color:pink;
 }
 input {
   width: 90%;
@@ -63,14 +63,14 @@ input {
   border: none;
   outline: none;
   font-size: 2rem;
-  background-color: rgb(223, 223, 223);
+  background-color:pink;
   display: inline-block;
 }
 form ion-icon {
   width: 8%;
   font-size: 3rem;
   margin-bottom: -8px;
-  color: rgb(75, 75, 75);
+  color: pink;
   display: inline-block;
 }
 .search-result {
@@ -83,7 +83,7 @@ form ion-icon {
 .item {
   width: 100%;
   border-radius: 8px;
-  background-color: rgb(37, 37, 37);
+  background-color: lightcyan;
   padding: 15px;
   overflow: hidden;
 }
@@ -92,13 +92,14 @@ form ion-icon {
   height: 300px;
   border-radius: 4px;
 }
+
 .flex-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .search-result .title {
-  color: whitesmoke;
+  color: black;
   margin: 20px 10px 0 0;
   font-size: 1.8rem;
   font-weight: 400;
@@ -108,8 +109,8 @@ form ion-icon {
   text-align: center;
   width: 130px;
   padding: 10px 0;
-  background-color: #404041;
-  color: whitesmoke;
+  background-color: aquamarine;
+  color: black;
   font-size: 1.4rem;
   font-weight: 600;
   margin-top: 20px;
@@ -117,7 +118,7 @@ form ion-icon {
   align-self: flex-start;
 }
 .item-data {
-  color: whitesmoke;
+  color: black;
   display: block;
   margin-top: 10px;
   font-size: 1.4rem;
@@ -150,4 +151,14 @@ form ion-icon {
     font-size: 2rem;
   }
 }
-*/
+/*
+.card-panel {
+  display: flex;
+  text-align: center;
+ }
+ 
+ .icon {
+   text-align: center;
+   color:aqua
+ }
+*
