@@ -12,10 +12,18 @@
             
             <div class="col s12">
                 <div class="row">
-                    <div class="input-field col s6">
-                        <p><label for="Cimage"><b>Clinic image</b></label></p>
-                    
-                        <input type="file" name="Cimage" accept="image/png, image/jpeg">
+                    <div class="uploadImage">
+    
+                        <img  width="250" src="../../public/images/Clinic/clinic.jpg">
+                        <div class="file-field input-field">
+                            <div  class="btn">
+                              <span>File</span>
+                              <input name="clinic_img" type="file" id="clinic_img" accept="image/*">
+                            </div>
+                            <div class="file-path-wrapper" style="width:200px;">
+                              <input id="file" class="file-path validate" type="text">
+                            </div>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -72,5 +80,6 @@
         </div>
      </form>
     
+     <script src="../../public/js/clinic/clinic.js"></script>
 
   

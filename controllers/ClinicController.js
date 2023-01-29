@@ -45,4 +45,12 @@ export class ClinicController {
       return error
     }
   }
+   
+  static async findByIdAndUpdate(Id) {
+    try {
+      return Clinic.findByIdAndUpdate({clinicId: Id}).exec()
+    } catch (error) {
+      return error
+    }
+  }
 }

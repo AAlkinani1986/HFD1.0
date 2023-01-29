@@ -1,6 +1,16 @@
 import { Router } from 'express'
-import passport from 'passport'
+import  multer  from 'multer'
 import { ClinicController } from '../../controllers/ClinicController.js'
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './public/images/Clinic')
+  },
+  filename: function (req, file, cb) {
+    cb(null, req.session.user._id + '.jpg')
+  },
+})
+const upload = multer({ storage: storage })
 
 const router = Router()
 
@@ -11,7 +21,7 @@ export function registrationClinic() {
       page: 'new clinic',
     })
   })
-  router.post("/registration", async (req, res, next) => {
+  router.post("/registration",  upload.single('clinic_img'),  async (req, res, next) => {
     try {
       console.log("data", req.body);
       
