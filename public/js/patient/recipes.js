@@ -37,7 +37,6 @@ function generateHTML(results) {
         <p class="item-data">Diet label: ${result.recipe.dietLabels.length > 0 ? result.recipe.dietLabels : 'No Data Found'}</p>
         <p class="item-data">Health labels: ${result.recipe.healthLabels}</p>
         <center> <i class="small material-icons waves-effect waves-light">favorite</i>
-        <a class="btn-floating btn-small waves-effect waves-light pink"><i class="material-icons">add</i></a>
     
         </center>
       </div>
@@ -45,6 +44,7 @@ function generateHTML(results) {
   })
   searchResultDiv.innerHTML = generatedHTML;
 }
+
 
 /* 
 //Add an event listener to the button that runs the function sendApiRequest when it is clicked
