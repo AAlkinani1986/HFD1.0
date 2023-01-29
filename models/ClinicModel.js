@@ -26,6 +26,10 @@ const ClinicSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  Code: {
+     type: Number,
+     required: true,
+  },
   textarea: {
     type: String,
     required: true,

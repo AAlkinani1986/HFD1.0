@@ -8,3 +8,8 @@
   padding-right: 2%;
   float: right;
 }
+
+#doctorList {
+  color: black;
+  background-color: #42f5ce;
+}
