@@ -64,3 +64,8 @@ font-weight: bolder;
  margin: 0 !important;
  padding: 0 !important;
 }
+.resetPassword{
+  width: 40%;
+  margin: 20px auto;
+  padding: 20px;
+}

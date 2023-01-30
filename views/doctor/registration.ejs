@@ -14,6 +14,7 @@
           <h2>Your details</h2>
 
           <div class="row">
+            <form enctype="multipart/form-data"  action="registration" method="post" class="col s12">
             <div class="uploadImage">
 
               <img width="150" src="../../public/images/patient/sample.jpg">
@@ -29,7 +30,7 @@
             </div>
 
             <div class="row">
-              <form action="/doctor/registration" method="post" class="col s12">
+              
                 <div class="row">
                   <div class="input-field col s6">
                     <input placeholder="Placeholder" id="first_name" type="text" class="validate" name="firstName">
@@ -179,14 +180,14 @@
                     </div>
                   </div>
                 </div>
-                <button class="btn waves-effect waves-light col offset-s4" type="submit" name="action"
-                  id="submit">Submit
+                <button class="btn waves-effect waves-light col offset-s4" type="submit" name="action">Submit
                 </button>
               </form>
             </div>
 
-            <script src="../../public/js/doctor/doctor.js"></script>
-            <link rel="stylesheet" href="../../public/css/doctor/doctor.css" />
+        
+       
           </div>
       </div>
   </div>
+  <script src="../../public/js/doctor/doctor.js"></script>
