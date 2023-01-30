@@ -8,7 +8,9 @@
 }
 .uploadImage{
     margin-top: 15px;
-    width: 50%;
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
     display: block;
   margin-left: auto;
   margin-right: auto;

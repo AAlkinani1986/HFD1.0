@@ -12,11 +12,17 @@ export function Profile() {
     });
   });
 
-  router.get("/Update/:id",async (res,req,next)=>{
+  router.get("/profile",async (res,req,next)=>{
     try {
-    await ClinicController.findbyIdAndUpdate(req.params.user._id)
+      const Clinic = await ClinicController.findbyIdAndUpdate(
+      req.body.Clinicname,
+      req.body.Phone,
+      req.body.Address,
+      req.body.Code,
+      req.session.user._id)
      return res.render("clinic/profile",{
-      page: "profile Clinic"
+      page: "profile Clinic",
+      clinic : Clinic
      })
     } catch (error) {
       return next(error)
