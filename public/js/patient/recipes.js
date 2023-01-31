@@ -1,4 +1,3 @@
-
 // document.getElementById('recipes').style.color = 'green'
 // let searchButton = document.querySelector("#search")
 
@@ -45,7 +44,6 @@ function generateHTML(results) {
   })
   searchResultDiv.innerHTML = generatedHTML;
 }
-
 
 /* 
 //Add an event listener to the button that runs the function sendApiRequest when it is clicked
