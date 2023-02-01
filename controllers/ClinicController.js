@@ -45,12 +45,33 @@ export class ClinicController {
       return error
     }
   }
-   
-  static async findByIdAndUpdate(Id) {
-    try {
-      return Clinic.findByIdAndUpdate({clinicId: Id}).exec()
-    } catch (error) {
-      return error
-    }
+   /**
+   * Finds a user by id
+   * @param {*} clinicId
+   * @returns a user
+   */
+static async findById(clinicId) {
+  try {
+    return Clinic.findById(clinicId).exec()
+  } catch (error) {
+    return error
   }
 }
+
+ /**
+   * Finds a user by id
+   * @param {*} clinicId
+   * @returns a user
+   */
+ static async findByIdAndUpdate(clinicId) {
+  try {
+    return Clinic.findByIdAndUpdate(clinicId).exec()
+  } catch (error) {
+    return error
+  }
+}
+  static async getClinic() {
+    return Clinic.find().sort({ createdAt: -1 }).exec();
+  }
+}
+

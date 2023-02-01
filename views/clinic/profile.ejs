@@ -4,12 +4,12 @@
         <div class="col s12 m6">
             <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
-                    <!-- <img  src="/public/images/clinic.jpg" width="200px" height="250px"> -->
-                        <div class="uploadImage">
+                   
+                        <!-- <div class="uploadImage">
     
-                            <img class="activator" width="250"  name="clinic_img" src="../../public/data/uploads/clinic/<%=clinic.clinicId%>.jpg" id="clinic_img" accept="image/*">
+                             <img class="activator" width="250"  name="clinic_img" src="../../public/data/uploads/clinic/<%=clinic.clinicId%>.jpg" id="clinic_img" accept="image/*"> 
         
-                        </div>
+                        </div> -->
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">Clinic profile</span>
@@ -23,34 +23,35 @@
                         <div class="row">
                             <form action="" method="" class="col s12">
                                 <input type="hidden" name="_id" value="<%=clinic.clinicId%>">
+
                               <div class="row">
                                 <div class="input-field col s6">
-                                  <input disabled placeholder="Clinicname" id="Clinicname" type="text" class="validate" name="Clinicname"
+                                  <input placeholder="Clinicname" id="Clinicname" type="text" class="validate" name="Clinicname"
                                     value="<%=clinic.Clinicname%>">
                 
                                   <label for="Clinicname">Clinic Name:-</label>
                                 </div>
                                 <div class="input-field col s6">
-                                  <input disabled id="Phone" type="text" class="validate" name="Phone" value=" <%=clinic.Phone%>">
+                                  <input id="Phone" type="text" class="validate" name="Phone" value=" <%=clinic.Phone%>">
                                   <label for="Phone">Phone:-</label>
                                 </div>
                               </div>
                               <div class="row">
                                 <div class="input-field col s6">
-                                  <input disabled placeholder="ZipCode" id="Code" type="text" class="validate" name="Code4"
+                                  <input placeholder="ZipCode" id="Code" type="text" class="validate" name="Code4"
                                     value="<%=clinic.Code%>">
                 
                                   <label for="Zip Code">Code:-
                                   </label>
                                 </div>
                                 <div class="input-field col s6">
-                                  <input disabled id="Address" type="text" class="validate" name="Address" value="<%=clinic.Address%>">
+                                  <input id="Address" type="text" class="validate" name="Address" value="<%=clinic.Address%>">
                                   <label for="Address">Address:-</label>
                                 </div>
                               </div>
                             </form>
                         </div>
-                    <a href="/clinic/profile/<%=clinic._id%>"button class="btn waves-effect waves-light" type="submit" name="action" id="btn"> Update</a></button>
+                    <a href="/clinic/profile/<%= clinic.clinicId %>"button class="btn waves-effect waves-light" type="submit" name="action" id="btn"> Update</a></button>
                 </div>
             </div>
         </div>

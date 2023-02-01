@@ -12,21 +12,26 @@ export function Profile() {
     });
   });
 
-  router.get("/profile",async (res,req,next)=>{
-    try {
-      const Clinic = await ClinicController.findbyIdAndUpdate(
-      req.body.Clinicname,
-      req.body.Phone,
-      req.body.Address,
-      req.body.Code,
-      req.session.user._id)
-     return res.render("clinic/profile",{
+  router.get("/profile/:clinicId",async (req, res)=>{
+     const Clinic = await ClinicController.findById(req.params.clinicId )
+
+    res.render("clinic/profile", {
       page: "profile Clinic",
       clinic : Clinic
+    })
+    })
+    router.post("/profile/:clinicId",async (req, res)=>{
+     await ClinicController.getClinic(req.params.clinicId,
+      req.body.Clinicname,
+      req.body.Phone,
+      req.body.Address, 
+      req.body.Code)
+    await ClinicController.findByIdAndUpdate(req.params.clinicId)
+    Clinic.save()
+
+     res.render("clinic/profile", {
+       page: "profile Clinic"
      })
-    } catch (error) {
-      return next(error)
-    }
     })
   return router;
 }
