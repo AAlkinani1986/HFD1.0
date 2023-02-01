@@ -59,7 +59,9 @@ export function app(config) {
     res.locals.messages = req.session.messages
     return next()
   })
+
   app.use('/', routers({ config }))
+
   // catch 404 and forward to error handler
   app.use((req, res, next) => {
     next(createHttpError.NotFound('this page not found 404'))

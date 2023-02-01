@@ -1,8 +1,8 @@
 import pino from 'pino'
 import PinoPretty from 'pino-pretty'
-import { config } from 'dotenv'
+import { config as loadEnv } from 'dotenv'
 const logger = pino(PinoPretty())
-config()
+loadEnv()
 
 const index = {
   database: {

@@ -2,7 +2,7 @@ import { Router } from 'express'
 import { authRouter } from './user/index.js'
 
 import { ensureLoggedIn } from 'connect-ensure-login'
-
+import cors from 'cors'
 import { doctorRoutes } from './Doctor/index.js'
 import { clinicRoutes } from './clinic/index.js'
 import { patientRoutes } from './patient/index.js'
