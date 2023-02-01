@@ -36,13 +36,7 @@ font-weight: bolder;
   z-index: 1;
 }
 
-.container_login{
-  display: flex;
 
-  justify-content: center;
-  align-items: center;
-  margin: 100px 500px auto;
-}
 .row{
   flex: 1;
 }
@@ -64,8 +58,26 @@ font-weight: bolder;
  margin: 0 !important;
  padding: 0 !important;
 }
-.resetPassword{
-  width: 40%;
-  margin: 20px auto;
-  padding: 20px;
+.resetPassword,.middle{
+  width: 60% !important;
+  margin: 150px auto !important;
+  padding: 20px !important;
+}
+.login_card{
+  height: auto !important;
+}
+.link{
+  padding: 10px;
+  margin: 5px;
+}
+.resetpassword{
+  color: darkgreen;
+  text-decoration: underline;
+}
+.resetpassword:hover{
+  color: rgb(6, 180, 6);
+  text-decoration: none;
+}
+.c_white{
+  color: white !important
 }

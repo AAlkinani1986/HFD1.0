@@ -4,7 +4,7 @@
     <div class="container userTable">
       <%- include('../partials/messages');%>
 
-        <table class="striped grey darken-4 centered highlight responsive-table " style="font-size: medium; font-weight: 600;">
+        <table class="striped green darken-4 centered highlight responsive-table col s12 m12 l12" style="color: white;">
           <thead style="font-size: large; font-weight: bold;">
             <tr>
               <th >Username</th>
@@ -42,8 +42,8 @@
                     <%}%>
 
                       <% if(user.resetToken) {%>
-                        <a href="/user/resetpassword/<%=user._id%>/<%=user.resetToken%>"class=" waves-effect waves-light btn-small"
-                          title="Reset password"><i class="material-icons">check_circle</i></a>
+                        <a href="/user/changePassword/<%=user._id%>/<%=user.resetToken%>"class=" btn-floating btn_undo"
+                          title="Reset password"><i class="material-icons">undo</i></a>
                         <%}%>
 
                        
