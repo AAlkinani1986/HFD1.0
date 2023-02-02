@@ -63,8 +63,10 @@ export function app(config) {
   app.use('/', routers({ config }))
 
   // catch 404 and forward to error handler
-  app.use((req, res, next) => {
-    next(createHttpError.NotFound('this page not found 404'))
+  app.use((req, res) => {
+    return res.status(404).render('user/notFound', {
+      page: 'Not Found',
+    })
   })
   // error handler
   app.use((err, req, res) => {

@@ -36,7 +36,9 @@ export function loginRouter(params) {
         }
         if (user.occupation === 'admin') return res.redirect('/user/users')
         else {
-          return res.redirect('/' + user.occupation + '/registration')
+          return res
+            .status(200)
+            .redirect('/' + user.occupation + '/registration')
         }
       } catch (err) {
         return next(err)
