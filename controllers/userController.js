@@ -168,4 +168,11 @@ export class UserController {
   static async deleteUser(id) {
     return User.findByIdAndDelete(id)
   }
+  static async deleteUserByUsername(username) {
+    try {
+      return User.findOneAndRemove({ username }).exec()
+    } catch (error) {
+      return error
+    }
+  }
 }

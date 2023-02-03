@@ -84,3 +84,9 @@ th{
     padding: 1rem !important;
     text-align: center !important;
 }
+.notFound{
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

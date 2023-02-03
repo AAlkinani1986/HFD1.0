@@ -96,3 +96,4 @@ server.on('listening', () => {
   const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`
   logger.info(`Listening on ${bind}`)
 })
+export default server
