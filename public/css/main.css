@@ -46,6 +46,12 @@ body{
 }
 .userTable > table{
     padding: 10px !important;
+    font-size: large;
+
+}
+.btn_check{
+    background-color:#1b5e20 !important;
+    margin-right: 5px;
 }
 .btn_check{
     background-color:#1b5e20 !important;
@@ -53,4 +59,34 @@ body{
 }
 .btn_delete{
     background-color: #c62828 !important;
+}
+.btn_undo{
+    background-color: rgb(166, 166, 22) !important;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.userTable{
+    width: auto;
+    margin: 20px auto;
+    padding: 5px;
+}
+td{
+    width: auto;
+    padding: 10px;
+    text-align: center !important;
+}
+tr:hover{
+    color: black !important;
+    font-weight: bolder;
+    font-size: x-large;
+}
+th{
+    padding: 1rem !important;
+    text-align: center !important;
+}
+.notFound{
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

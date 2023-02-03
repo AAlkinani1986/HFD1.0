@@ -25,7 +25,13 @@ export class validation {
   static validateOccupied = body('occupied')
     .isLength({ min: 3 })
     .trim()
+    .custom((value) => {
+      const acceptedValues = ['patient', 'doctor', 'clinic']
+      if (!acceptedValues.includes(value)) {
+        return false
+      }
+      return true
+    })
     .withMessage('The Occupied must be selected')
-
   static validationResult = validationResult
 }

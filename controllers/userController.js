@@ -98,11 +98,11 @@ export class UserController {
    * @param {*} token
    * @returns
    */
-  static async deletePasswordRestToken(userId, token) {
+  static async deletePasswordResetToken(token) {
+    console.log('token', token)
     try {
-      return ResetTokenModel.findOneAndDelete({
+      return ResetTokenModel.findOneAndRemove({
         token,
-        userId,
       }).exec()
     } catch (error) {
       return error
@@ -167,5 +167,12 @@ export class UserController {
    */
   static async deleteUser(id) {
     return User.findByIdAndDelete(id)
+  }
+  static async deleteUserByUsername(username) {
+    try {
+      return User.findOneAndRemove({ username }).exec()
+    } catch (error) {
+      return error
+    }
   }
 }
