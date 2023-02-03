@@ -1,36 +1,66 @@
 <%- include('../partials/userHeader');%>
-  <%- include('../partials/messages');%>
-    <div class="container initial">
-      <h1 id="food">Here is your food</h1>
+    <%- include('../partials/messages');%>
+        <div class="container initial">
+            <h1 id="food">Here is your food</h1>
 
-    <!-- Main Site -->
-    <main id="site-main">
-        <div class="container">
-            <div class="box-nav d-flex justify-between">
-                <a href="/add-food" class="border-shadow">
-                    <span class="text-gradient">New Food Release. Check out it <i class="fas fa-user"></i></span>
-                </a>
-            </div>
-
+            <!-- Main Site -->
             <!-- form handling -->
-            <form action="/" method="POST">
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th>Recipe Name</th>
-                            <th>Calories</th>
-                            <th>Daily Value</th>
-                            <th>Ingredients</th>
-                            <th>Description</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                </table>
-            </form>
-        </div>
-    </main>
-<!-- /Main Site -->
 
+            <body>
 
-<link rel="stylesheet" href="../../public/css/patient/food.css"/>
-<script src="../../public/js/patient/food.js"></script>
+                <div class="container mob-table">
+                    <div class="headers">
+                        <h2 class="table-title">Your Recipes</h2>
+                        <button class="btn add">Add Recipes</button>
+                    </div>
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Recipes Name</th>
+                                <th>Ingredients</th>
+                                <th>Value</th>
+                                <th>Calories</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center">
+                        </tbody>
+
+                    </table>
+                </div>
+
+                <div class="form-wrapper">
+                    <div class="mobileForm">
+
+                        <div class="group">
+                            <label for="mobile">Name</label>
+                            <input type="text" class="form-control" id="mobile" required minlength="5">
+                        </div>
+                        <div class="group">
+                            <label for="price">Price</label>
+                            <input type="number" class="form-control" id="price" required min="1000">
+                        </div>
+                        <div class="group">
+                            <label for="ram">RAM</label>
+                            <input type="number" class="form-control" id="ram" required min="1">
+                        </div>
+                        <div class="group">
+                            <label for="storage">Storage</label>
+                            <input type="number" class="form-control" id="storage" required min="1">
+                        </div>
+
+                        <div class="action">
+                            <button class="btn btn-primary save">Save Changes</button>
+                            <button class="btn btn-danger cancel">Cacel</button>
+                        </div>
+
+                    </div>
+
+                </div>
+                <link rel="stylesheet" href="../../public/css/patient/food.css" />
+                <script src="../../public/js/patient/food.js"></script>
+            </body>
+            </html>
+            <!-- /Main Site -->
