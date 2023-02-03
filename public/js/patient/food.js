@@ -1,123 +1,74 @@
-document.getElementById('food').style.color = 'pink'
+document.getElementById('food').style.color = 'green'
 
-let tbody = document.querySelector('tbody');
-let addBtn = document.querySelector('.add');
-let form = document.querySelector('.form-wrapper');
-let saveBtn = document.querySelector('.save');
-let cancelBtn =  document.querySelector('.cancel');
-let mobileEle =  document.querySelector('#mobile');
-let priceEle =  document.querySelector('#price');
-let ramEle =  document.querySelector('#ram');
-let storageEle =  document.querySelector('#storage');
+var selectedRow = null
 
-let httpm =null;
-
-let url ='http://localhost:3000';
-
-let mobiles =[];
-
-let id=null;
-
-let data ={};
-
-addBtn.onclick = function(){
-    httpm="POST";
-    clearForm();
-    form.classList.add('active')
+function onFormSubmit(e) {
+	event.preventDefault();
+        var formData = readFormData();
+        if (selectedRow == null){
+            insertNewRecord(formData);
+		}
+        else{
+            updateRecord(formData);
+		}
+        resetForm();    
 }
 
-
-cancelBtn.onclick = function(){
-    form.classList.remove('active')
+//Retrieve the data
+function readFormData() {
+    var formData = {};
+    formData["recipesName"] = document.getElementById("recipesName").value;
+    formData["ingredients"] = document.getElementById("ingredients").value;
+    formData["calories"] = document.getElementById("calories").value;
+    formData["dailyValue"] = document.getElementById("dailyValue").value;
+    return formData;
 }
 
-saveBtn.onclick= function(){
+//Insert the data
+function insertNewRecord(data) {
+    var table = document.getElementById("storeList").getElementsByTagName('tbody')[0];
+    var newRow = table.insertRow(table.length);
+    cell1 = newRow.insertCell(0);
+		cell1.innerHTML = data.recipesName;
+    cell2 = newRow.insertCell(1);
+		cell2.innerHTML = data.ingredients;
+    cell3 = newRow.insertCell(2);
+		cell3.innerHTML = data.calories;
+    cell4 = newRow.insertCell(3);
+		cell4.innerHTML = data.dailyValue;
+    cell4 = newRow.insertCell(4);
+        cell4.innerHTML = `<button onClick="onEdit(this)">Edit</button> <button onClick="onDelete(this)">Delete</button>`;
+}
 
-    data.name= mobileEle.value;
-    data.price= priceEle.value;
-    data.ram = ramEle.value;
-    data.storage = storageEle.value;
-    if(httpm=="PUT"){
-        data.id= id
+//Edit the data
+function onEdit(td) {
+    selectedRow = td.parentElement.parentElement;
+    document.getElementById("recipesName").value = selectedRow.cells[0].innerHTML;
+    document.getElementById("ingredients").value = selectedRow.cells[1].innerHTML;
+    document.getElementById("calories").value = selectedRow.cells[2].innerHTML;
+    document.getElementById("dailyValue").value = selectedRow.cells[3].innerHTML;
+}
+function updateRecord(formData) {
+    selectedRow.cells[0].innerHTML = formData.recipesName;
+    selectedRow.cells[1].innerHTML = formData.ingredients;
+    selectedRow.cells[2].innerHTML = formData.calories;
+    selectedRow.cells[3].innerHTML = formData.dailyValue;
+}
+
+//Delete the data
+function onDelete(td) {
+    if (confirm('Do you want to delete this record?')) {
+        row = td.parentElement.parentElement;
+        document.getElementById('storeList').deleteRow(row.rowIndex);
+        resetForm();
     }
-  
-    fetch(url,
-        { 
-            method: httpm, body: JSON.stringify(data), 
-            headers: { "Content-type": "application/json" } 
-        })
-    .then(()=>{
-        clearForm();
-        form.classList.remove('active');
-        getMobiles()
-    })
-
-
 }
 
-function clearForm(){
-    mobileEle.value =null;
-    priceEle.value =null;
-    ramEle.value= null;
-    storageEle.value =null;
-}
-
-
-
-function getMobiles(){
-    fetch(url)
-    .then(response=>response.json())
-    .then(data=>{
-        mobiles = data;
-        updateTable();
-
-    })
-
-    
-}
-
-getMobiles();
-
-function updateTable(){
-    let data="";
-
-    if(mobiles.length>0){
-        for(i= 0;i<mobiles.length;i++){
-
-            data+=  `<tr id="${mobiles[i]['id']}">
-                        <td>${mobiles[i]['name']}</td>
-                        <td>${mobiles[i]['price']}</td>
-                        <td>${mobiles[i]['ram']+"GB"}</td>
-                        <td>${mobiles[i]['storage']+"GB"}</td>
-                        <td><button class="btn btn-primary" onclick="editMobile(event)">Edit</button></td>
-                        <td><button class="btn btn-danger" onclick="deleteMobile(event)">Delete</button></td>   
-                     </tr>`
-        }
-
-     tbody.innerHTML=data;
-    }
-
-}
-
-function editMobile(e){
-   form.classList.add('active');
-   httpm="PUT"
-   id= e.target.parentElement.parentElement.id;
-  let selectedMobile = mobiles.filter((m)=>{return m['id'] ==id})[0];
-  mobileEle.value= selectedMobile.name;
-  priceEle.value = selectedMobile.price;
-  ramEle.value = selectedMobile.ram;
-  storageEle.value = selectedMobile.storage;
-
-}
-
-function deleteMobile(e){
-    id= e.target.parentElement.parentElement.id;
-     fetch(url+"/"+id, {method:'DELETE'})
-     .then(
-        ()=>{
-            getMobiles()
-        }
-     )
-
+//Reset the data
+function resetForm() {
+    document.getElementById("recipesName").value = '';
+    document.getElementById("ingredients").value = '';
+    document.getElementById("calories").value = '';
+    document.getElementById("dailyValue").value = '';
+    selectedRow = null;
 }

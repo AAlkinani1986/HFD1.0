@@ -1,66 +1,57 @@
 <%- include('../partials/userHeader');%>
     <%- include('../partials/messages');%>
         <div class="container initial">
-            <h1 id="food">Here is your food</h1>
-
-            <!-- Main Site -->
-            <!-- form handling -->
-
-            <body>
-
-                <div class="container mob-table">
-                    <div class="headers">
-                        <h2 class="table-title">Your Recipes</h2>
-                        <button class="btn add">Add Recipes</button>
-                    </div>
-
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Recipes Name</th>
-                                <th>Ingredients</th>
-                                <th>Value</th>
-                                <th>Calories</th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-center">
-                        </tbody>
-
-                    </table>
-                </div>
-
-                <div class="form-wrapper">
-                    <div class="mobileForm">
-
-                        <div class="group">
-                            <label for="mobile">Name</label>
-                            <input type="text" class="form-control" id="mobile" required minlength="5">
-                        </div>
-                        <div class="group">
-                            <label for="price">Price</label>
-                            <input type="number" class="form-control" id="price" required min="1000">
-                        </div>
-                        <div class="group">
-                            <label for="ram">RAM</label>
-                            <input type="number" class="form-control" id="ram" required min="1">
-                        </div>
-                        <div class="group">
-                            <label for="storage">Storage</label>
-                            <input type="number" class="form-control" id="storage" required min="1">
-                        </div>
-
-                        <div class="action">
-                            <button class="btn btn-primary save">Save Changes</button>
-                            <button class="btn btn-danger cancel">Cacel</button>
-                        </div>
-
-                    </div>
-
-                </div>
+            <h1 id="food">Plan your food for your health</h1>
+        </div>
+        <body>
+            <table>
+                <tr>
+                    <td>
+                        <form autocomplete="off" onsubmit="onFormSubmit()">
+                            <div>
+                                <label for="recipesName">Recipes Name</label>
+                                <input type="text" name="recipesName" id="recipesName">
+                            </div>
+                            <div>
+                                <label for="ingredients">Ingredients</label>
+                                <input type="text" name="ingredients" id="ingredients">
+                            </div>
+                            <div>
+                                <label for="calories">Calories</label>
+                                <input type="number" name="calories" id="calories">
+                            </div>
+                            <div>
+                                <label for="dailyValue">Daily Value</label>
+                                <input type="number" name="dailyValue" id="dailyValue">
+                            </div>
+        
+                            <div class="form_action--button">
+                                <input type="submit" value="Submit">
+                                <input type="reset" value="Reset">
+                            </div>
+                        </form>
+        
+                        <td>
+                            <table class="list" id="storeList">
+                                <thead>
+                                    <tr>
+                                        <th>Recipes Name</th>
+                                        <th>Ingredients</th>
+                                        <th>Calories</th>
+                                        <th>Daily Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+        
+                                </tbody>
+                            </table>
+                        </td>
+                    </td>
+                </tr>
+            </table>
                 <link rel="stylesheet" href="../../public/css/patient/food.css" />
                 <script src="../../public/js/patient/food.js"></script>
             </body>
+            
             </html>
             <!-- /Main Site -->
