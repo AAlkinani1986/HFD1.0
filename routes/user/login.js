@@ -5,7 +5,7 @@ const router = Router()
 
 export function loginRouter(params) {
   router.get('/login', function (req, res) {
-    res.render('user/login', { page: 'login' })
+    res.status(200).render('user/login', { page: 'login' })
   })
   /**
    * POST route to process the login form or display it again along with an error message in case validation fails
@@ -26,7 +26,7 @@ export function loginRouter(params) {
           text: 'You are logged in now!',
           type: 'success',
         })
-        console.log('use_id', req.session.user)
+        // console.log('use_id', req.session.user)
         const user = req.session.user
         if (req.body.remember) {
           req.sessionOptions.maxAge = 24 * 60 * 60 * 1000 * 14

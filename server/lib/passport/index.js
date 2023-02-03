@@ -13,7 +13,6 @@ export function Passport(config) {
       },
       async (req, username, password, done) => {
         try {
-          console.log('username', req.body.username)
           const user = await UserController.findByUsername(req.body.username)
           if (!user) {
             req.session.messages.push({

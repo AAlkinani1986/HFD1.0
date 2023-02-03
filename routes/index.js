@@ -12,7 +12,7 @@ var router = Router()
 export function routers(params) {
   //homepage
   router.get('/', function (req, res) {
-    res.render('user/login', { page: 'login' })
+    res.status(200).render('user/login', { page: 'login' })
   })
   router.get('/newUser', function (req, res) {
     res.render('user/register', {

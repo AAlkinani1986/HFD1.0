@@ -38,7 +38,7 @@ export function registrationRouter() {
           const findByUsername = await UserController.findByUsername(
             req.body.username,
           )
-          console.log(findByEmail, findByUsername)
+          // console.log(findByEmail, findByUsername)
           if (findByUsername || findByEmail) {
             errors.push('email')
             errors.push('username')
@@ -55,7 +55,7 @@ export function registrationRouter() {
          */
         if (errors.length) {
           // Render the page again and show the errors
-          return res.render('user/register', {
+          return res.status(302).render('user/register', {
             page: 'registration',
             data: req.body,
             errors,
