@@ -1,4 +1,4 @@
-document.getElementById('food').style.color = 'green'
+document.getElementById('food').style.color = 'red'
 
 var selectedRow = null
 
