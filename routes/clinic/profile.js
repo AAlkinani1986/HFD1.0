@@ -15,21 +15,20 @@ export function Profile() {
   router.get("/profile/:clinicId",async (req, res)=>{
      const Clinic = await ClinicController.findById(req.params.clinicId )
 
-    res.render("clinic/profile", {
-      page: "profile Clinic",
-      clinic : Clinic
-    })
+    // res.render("clinic/profile", {
+    //   page: "profile Clinic",
+    //   clinic : Clinic
     })
     router.post("/profile/:clinicId",async (req, res)=>{
-     await ClinicController.getClinic(req.params.clinicId,
+    const clinic = await ClinicController.findById(req.params.clinicId,
       req.body.Clinicname,
       req.body.Phone,
       req.body.Address, 
       req.body.Code)
     await ClinicController.findByIdAndUpdate(req.params.clinicId)
-    Clinic.save()
+    clinic.save()
 
-     res.render("clinic/profile", {
+    return res.render("clinic/profile", {
        page: "profile Clinic"
      })
     })
