@@ -74,4 +74,3 @@ static async findById(clinicId) {
     return Clinic.find().sort({ createdAt: -1 }).exec();
   }
 }
-
