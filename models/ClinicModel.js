@@ -1,11 +1,11 @@
 import mongoose from 'mongoose'
 
 const ClinicSchema = mongoose.Schema({
-  Clinicname: {
+  ClinicName: {
     type: String,
     required: true,
   },
-  Registernumber: {
+  RegisterNumber: {
     type: Number,
     required: true,
   },
@@ -27,8 +27,8 @@ const ClinicSchema = mongoose.Schema({
     required: true,
   },
   Code: {
-     type: Number,
-     required: true,
+    type: Number,
+    required: true,
   },
   textarea: {
     type: String,

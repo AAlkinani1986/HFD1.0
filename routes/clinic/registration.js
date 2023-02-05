@@ -15,8 +15,16 @@ const upload = multer({ storage: storage })
 const router = Router()
 
 export function registrationClinic() {
-  router.get('/registration', function (req, res) {
-    console.log('user', req.session.user._id)
+  router.get('/registration', async function (req, res) {
+    const clinic = await ClinicController.findOne(req.session.user._id)
+
+    if (clinic) {
+      req.session.messages.push({
+        text: 'welcome back' + clinic.name,
+        type: 'info',
+      })
+      return res.redirect('/clinic/profile')
+    }
     res.render('clinic/registration', {
       page: 'new clinic',
     })
@@ -29,8 +37,8 @@ export function registrationClinic() {
         console.log('data', req.body)
 
         await ClinicController.createclinic(
-          req.body.Clinicname,
-          req.body.Registernumber,
+          req.body.ClinicName,
+          req.body.RegisterNumber,
           req.body.ABN,
           req.body.Phone,
           req.body.Date,

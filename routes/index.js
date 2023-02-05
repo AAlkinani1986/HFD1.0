@@ -24,6 +24,7 @@ export function routers(params) {
   router.use('/user', authRouter(params))
   router.use('/doctor', ensureLoggedIn('/'), doctorRoutes(params))
   router.use('/clinic', ensureLoggedIn('/'), clinicRoutes(params))
+
   router.use('/patient', ensureLoggedIn('/'), patientRoutes(params))
 
   return router

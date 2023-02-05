@@ -14,6 +14,10 @@ const upload = multer({ dest: 'public/data/uploads/doctor' })
 const router = Router()
 export function registration() {
   router.get('/registration', async (req, res) => {
+    if (req.session.user.occupation !== 'patient') {
+      return res.redirect('/' + req.session.user.occupation + '/registration')
+    }
+
     const patient = await patientController.findOne(req.session.user._id)
 
     if (patient) {

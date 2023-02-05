@@ -5,11 +5,11 @@
             <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
                    
-                        <!-- <div class="uploadImage">
+                        <div class="uploadImage">
     
-                             <img class="activator" width="250"  name="clinic_img" src="../../public/data/uploads/clinic/<%=clinic.clinicId%>.jpg" id="clinic_img" accept="image/*"> 
+                             <img class="activator" width="250"alt="<%= clinic.ClinicName %> " name="clinic_img" src="../../public/data/uploads/clinic/<%=clinic.clinicId%>.jpg"> 
         
-                        </div> -->
+                        </div>
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">Clinic profile</span>
@@ -26,8 +26,8 @@
 
                               <div class="row">
                                 <div class="input-field col s6">
-                                  <input placeholder="Clinicname" id="Clinicname" type="text" class="validate" name="Clinicname"
-                                    value="<%=clinic.Clinicname%>">
+                                  <input placeholder="Clinicname" id="Clinicname" type="text" class="validate" name="ClinicName"
+                                    value="<%=clinic.ClinicName%>">
                 
                                   <label for="Clinicname">Clinic Name:-</label>
                                 </div>
