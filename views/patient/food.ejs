@@ -1,36 +1,57 @@
 <%- include('../partials/userHeader');%>
-  <%- include('../partials/messages');%>
-    <div class="container initial">
-      <h1 id="food">Here is your food</h1>
-
-    <!-- Main Site -->
-    <main id="site-main">
-        <div class="container">
-            <div class="box-nav d-flex justify-between">
-                <a href="/add-food" class="border-shadow">
-                    <span class="text-gradient">New Food Release. Check out it <i class="fas fa-user"></i></span>
-                </a>
-            </div>
-
-            <!-- form handling -->
-            <form action="/" method="POST">
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th>Recipe Name</th>
-                            <th>Calories</th>
-                            <th>Daily Value</th>
-                            <th>Ingredients</th>
-                            <th>Description</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                </table>
-            </form>
+    <%- include('../partials/messages');%>
+        <div class="container initial">
+            <h1 id="food">Plan food for your health</h1>
         </div>
-    </main>
-<!-- /Main Site -->
+        <body>
+            <table>
+                <tr>
+                    <td>
+                        <form autocomplete="off" onsubmit="onFormSubmit()">
+                            <div>
+                                <label for="recipesName">Recipes Name</label>
+                                <input type="text" name="recipesName" id="recipesName">
+                            </div>
+                            <div>
+                                <label for="ingredients">Ingredients</label>
+                                <input type="text" name="ingredients" id="ingredients">
+                            </div>
+                            <div>
+                                <label for="calories">Calories</label>
+                                <input type="number" name="calories" id="calories">
+                            </div>
+                            <div>
+                                <label for="dailyValue">Daily Value</label>
+                                <input type="number" name="dailyValue" id="dailyValue">
+                            </div>
+        
+                            <div class="form_action--button">
+                                <input type="submit" value="Submit">
+                                <input type="reset" value="Reset">
+                            </div>
+                        </form>
+        
+                        <td>
+                            <table class="list" id="storeList">
+                                <thead>
+                                    <tr>
+                                        <th>Recipes Name</th>
+                                        <th>Ingredients</th>
+                                        <th>Calories</th>
+                                        <th>Daily Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+        
+                                </tbody>
+                            </table>
+                        </td>
+                    </td>
+                </tr>
+            </table>
+                <link rel="stylesheet" href="../../public/css/patient/food.css" />
+                <script src="../../public/js/patient/food.js"></script>
+            </body>
 
-
-<link rel="stylesheet" href="../../public/css/patient/food.css"/>
-<script src="../../public/js/patient/food.js"></script>
+            </html>
+            <!-- /Main Site -->

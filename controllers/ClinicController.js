@@ -81,4 +81,8 @@ export class ClinicController {
   static async getClinic() {
     return Clinic.find().sort({ createdAt: -1 }).exec()
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9a4821679ce569c8303f7fcfbf40d55f77d89e3d
