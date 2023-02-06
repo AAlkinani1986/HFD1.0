@@ -1,7 +1,7 @@
-<div class="doctor-registration">
+<%- include('../partials/header');%>
+  <div class="doctor-registration">
 
-  <div>
-    <%- include('../partials/header');%>
+    <div>
       <div class="container">
 
 
@@ -14,23 +14,23 @@
           <h2>Your details</h2>
 
           <div class="row">
-            <form enctype="multipart/form-data"  action="registration" method="post" class="col s12">
-            <div class="uploadImage">
+            <form enctype="multipart/form-data" action="registration" method="post" class="col s12">
+              <div class="uploadImage">
 
-              <img width="150" src="../../public/images/patient/sample.jpg">
-              <div class="file-field input-field">
-                <div class="btn">
-                  <span>File</span>
-                  <input name="avatar" type="file" id="doctor_img" accept="image/*">
-                </div>
-                <div class="file-path-wrapper" style="width:200px;">
-                  <input id="file" class="file-path validate" type="text">
+                <img width="150" src="../../public/images/patient/sample.jpg">
+                <div class="file-field input-field">
+                  <div class="btn">
+                    <span>File</span>
+                    <input name="avatar" type="file" id="doctor_img" accept="image/*">
+                  </div>
+                  <div class="file-path-wrapper" style="width:200px;">
+                    <input id="file" class="file-path validate" type="text">
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="row">
-              
+              <div class="row">
+
                 <div class="row">
                   <div class="input-field col s6">
                     <input placeholder="Placeholder" id="first_name" type="text" class="validate" name="firstName">
@@ -182,12 +182,12 @@
                 </div>
                 <button class="btn waves-effect waves-light col offset-s4" type="submit" name="action">Submit
                 </button>
-              </form>
-            </div>
-
-        
-       
+            </form>
           </div>
+
+
+
       </div>
+    </div>
   </div>
   <script src="../../public/js/doctor/doctor.js"></script>

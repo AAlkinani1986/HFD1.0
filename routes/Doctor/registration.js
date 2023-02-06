@@ -1,36 +1,51 @@
-import { Router } from 'express'
-import multer from 'multer'
-import { doctorController } from '../../controllers/doctorController.js'
+import { Router } from "express";
+import multer from "multer";
+import { doctorController } from "../../controllers/doctorController.js";
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './public/data/uploads/doctor')
+    cb(null, "./public/data/uploads/doctor");
   },
   filename: function (req, file, cb) {
-    cb(null, req.session.user._id + '.jpg')
+    cb(null, req.session.user._id + ".jpg");
   },
-})
+});
 
-const upload = multer({ storage: storage })
+const upload = multer({ storage: storage });
 
-const router = Router()
+const router = Router();
 
 export function registrationDoctor() {
-  router.get('/registration', function (req, res) {
-    res.render('doctor/registration', {
-      page: 'new doctor',
-    })
-  })
+  router.get("/registration", async (req, res) => {
+    if (req.session.user.occupation !== "doctor") {
+      return res.redirect("/" + req.session.user.occupation + "/registration");
+    }
+    // res.render("doctor/registration", {
+    //   page: "new doctor",
+    // });
+    const doctor = await doctorController.findOne(req.session.user._id);
+
+    if (doctor) {
+      req.session.messages.push({
+        text: "welcome back" + doctor.firstName,
+        type: "info",
+      });
+      return res.redirect("/doctor/profile");
+    }
+    res.render("doctor/registration", {
+      page: "registration",
+    });
+  });
 
   router.post(
-    '/registration',
-    upload.single('avatar'),
+    "/registration",
+    upload.single("avatar"),
     async (req, res, next) => {
-      console.log(req.file)
+      console.log(req.file);
 
-      console.log(req.body)
+      console.log(req.body);
       try {
-        console.log('data', req.body)
+        console.log("data", req.body);
         await doctorController.createDoctor(
           req.body.firstName,
           req.body.lastName,
@@ -44,8 +59,8 @@ export function registrationDoctor() {
           req.body.address,
           req.body.state,
           req.body.zibCode,
-          req.session.user._id,
-        )
+          req.session.user._id
+        );
 
         // const validationErrors = validation.validationResult(req);
         // const errors = [];
@@ -87,15 +102,15 @@ export function registrationDoctor() {
         // }
 
         req.session.messages.push({
-          text: 'Your account created successfully',
-          type: 'success',
-        })
-        return res.redirect('/doctor/registration')
+          text: "Your account created successfully",
+          type: "success",
+        });
+        return res.redirect("/doctor/profile");
       } catch (error) {
-        return next(error)
+        return next(error);
       }
-    },
-  )
+    }
+  );
 
-  return router
+  return router;
 }

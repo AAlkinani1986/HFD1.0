@@ -1,55 +1,56 @@
 <main>
-
-  <center>
-    <h1>Doctors List:</h1>
+  <%- include('../partials/doctorProfileheaders');%>
     <center>
-      <div class="container doctorTable" id="doctorList">
-        <%- include('../partials/messages');%>
 
-          <table class="mt-4 p-5 rounded text-center responsive table " style="font-size: medium; font-weight: 600;">
-            <thead style="font-size: large; font-weight: bold;">
-              <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Date Of Birth</th>
-                <th>Registration Number</th>
-                <th>Qualifications</th>
-                <th>Clinic Name</th>
-                <th>Languages</th>
-                <th>ABN:</th>
-              </tr>
-            </thead>
-            <tbody id="table-body">
+      <h1>Doctors List:</h1>
+      <center>
+        <div class="container doctorTable" id="doctorList">
+          <%- include('../partials/messages');%>
 
-              <% doctors.forEach(function(doctor) { %>
+            <table class="mt-4 p-5 rounded text-center responsive table " style="font-size: medium; font-weight: 600;">
+              <thead style="font-size: large; font-weight: bold;">
                 <tr>
-                  <td>
-                    <%=doctor.firstName%>
-                  </td>
-                  <td>
-                    <%=doctor.lastName%>
-                  </td>
-                  <td style="font-size: small;">
-                    <%=doctor.dateOfBirth%>
-                  </td>
-                  <td>
-                    <%=doctor.registrationNumber%>
-                  </td>
-                  <td>
-                    <%=doctor.qualifications%>
-                  </td>
-                  <td>
-                    <%=doctor.clinic%>
-                  </td>
-                  <td>
-                    <%=doctor.languages%>
-                  </td>
-                  <td>
-                    <%=doctor.abn%>
-                  </td>
-                  <td>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Date Of Birth</th>
+                  <th>Registration Number</th>
+                  <th>Qualifications</th>
+                  <th>Clinic Name</th>
+                  <th>Languages</th>
+                  <th>ABN:</th>
+                </tr>
+              </thead>
+              <tbody id="table-body">
 
-                    <!-- <% if(user.verificationToken) {%>
+                <% doctors.forEach(function(doctor) { %>
+                  <tr>
+                    <td>
+                      <%=doctor.firstName%>
+                    </td>
+                    <td>
+                      <%=doctor.lastName%>
+                    </td>
+                    <td style="font-size: small;">
+                      <%=doctor.dateOfBirth%>
+                    </td>
+                    <td>
+                      <%=doctor.registrationNumber%>
+                    </td>
+                    <td>
+                      <%=doctor.qualifications%>
+                    </td>
+                    <td>
+                      <%=doctor.clinic%>
+                    </td>
+                    <td>
+                      <%=doctor.languages%>
+                    </td>
+                    <td>
+                      <%=doctor.abn%>
+                    </td>
+                    <td>
+
+                      <!-- <% if(user.verificationToken) {%>
                   <a href="/user/verify/<%=user._id%>/<%=user.verificationToken%>" class=" btn-floating btn_check"
                     title="Verify user"><i class="material-icons">check_circle</i></a>
                   <%}%>
@@ -64,13 +65,14 @@
                         <a href="/user/delete/<%=user._id%>" class=" btn-floating btn_delete" title="Delete user"><i
                             class="material-icons"> delete_forever</i></a> -->
 
-                  </td>
-                </tr>
-                <%});%>
-            </tbody>
-          </table>
+                    </td>
+                  </tr>
+                  <%});%>
+              </tbody>
+            </table>
 
-      </div>
-      <script src="../../models/doctorModel.js"></script>
-      <link rel="stylesheet" href="../../public/css/doctor/doctor.css" />
+        </div>
+        <script src="../../models/doctorModel.js"></script>
+        <script src="../../public/js/doctor/doctor.js"></script>
+        <link rel="stylesheet" href="../../public/css/doctor/doctor.css" />
 </main>
