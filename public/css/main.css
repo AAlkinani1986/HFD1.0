@@ -1,3 +1,10 @@
+html, body {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
 body{
     font-family: 'Times New Roman', Times, serif !important;
   }
@@ -70,17 +77,17 @@ body{
     margin: 20px auto;
     padding: 5px;
 }
-td{
+.userList >td{
     width: auto;
     padding: 10px;
     text-align: center !important;
 }
-tr:hover{
+.userList > tr:hover{
     color: black !important;
     font-weight: bolder;
     font-size: x-large;
 }
-th{
+.userList> th{
     padding: 1rem !important;
     text-align: center !important;
 }
@@ -89,4 +96,15 @@ th{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.logout{
+    display: flex !important;
+    justify-content: center;
+  
+}
+
+.logout_text{
+    margin-top: 20px;
+    font-size: large !important;
+    text-transform: capitalize ;
 }

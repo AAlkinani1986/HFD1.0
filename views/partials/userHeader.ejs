@@ -1,19 +1,29 @@
 <nav>
+
   <div class="nav-wrapper teal darken-4" style="padding:0px 15px 10px 15px;">
-    <ul id="nav-mobile" class="left hide-on-med-and-down">
-      <li> <a style="font-size:x-large;" href="/">Home </a></li>
+    <a href="profile" style="font-size:x-large;margin-right: 5px; padding-right: 10px;" class="brand-logo left">HFD</a>
+    <ul style="margin-left: 50px;" id="nav-mobile" class="left hide-on-med-and-down ">
+
+      
+      <li> <a style="font-size:x-large;" href="/patient/profile">Home </a></li>
       <li> <a style="font-size:x-large;" href="#">Booking </a> </li>
       <li> <a style="font-size:x-large;" href="/patient/food">Food </a> </li>
       <li> <a style="font-size:x-large;" href="/patient/recipes">Recipes </a> </li>
-      <li> <a style="font-size:x-large;" href="#">Plan your week food </a> </li>
+      <li> <a style="font-size:x-large;" href="/patient/planFood">Plan your food </a> </li>
     </ul>
 
-<a href="/" style="font-size:x-large;" class="brand-logo center">HFD</a>
+
     <% if(locals.user) {%>
 
-      <a style="font-size:x-large;" href="/user/logout" class="brand-logo right"></i>
-        <img class="rounded" style="width: 50px;" src="../../public/data/uploads/patient/<%=patient.patientId%>.jpg"
-          alt=""> Logout </a>
+     <div class="logout">
+      <a  href="/user/logout" class="brand-logo logout_img right"></i>
+        <img class="circle" style="width: 50px;" src="../../public/data/uploads/patient/<%=patient.patientId%>.jpg"
+          alt="">     </a>
+          <a  href="/user/logout" class="brand-logo logout_text right"></i>
+              
+          logout
+          </a> 
+     </div>
 
       <%} else {%>
 
