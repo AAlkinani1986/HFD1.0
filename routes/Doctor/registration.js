@@ -16,9 +16,24 @@ const upload = multer({ storage: storage });
 const router = Router();
 
 export function registrationDoctor() {
-  router.get("/registration", function (req, res) {
+  router.get("/registration", async (req, res) => {
+    if (req.session.user.occupation !== "doctor") {
+      return res.redirect("/" + req.session.user.occupation + "/registration");
+    }
+    // res.render("doctor/registration", {
+    //   page: "new doctor",
+    // });
+    const doctor = await doctorController.findOne(req.session.user._id);
+
+    if (doctor) {
+      req.session.messages.push({
+        text: "welcome back" + doctor.firstName,
+        type: "info",
+      });
+      return res.redirect("/doctor/profile");
+    }
     res.render("doctor/registration", {
-      page: "new doctor",
+      page: "registration",
     });
   });
 
