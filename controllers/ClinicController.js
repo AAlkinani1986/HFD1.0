@@ -1,4 +1,4 @@
-import { Clinic } from '../models/ClinicModel.js'
+import { Clinic } from "../models/ClinicModel.js";
 
 export class ClinicController {
   /**
@@ -23,34 +23,34 @@ export class ClinicController {
     Address,
     Code,
     textarea,
-    clinicId,
+    clinicId
   ) {
-    const clinic = new Clinic()
-    clinic.ClinicName = Clinicname
-    clinic.RegisterNumber = Registernumber
-    clinic.ABN = ABN
-    clinic.Phone = Phone
-    clinic.Date = Date
-    clinic.Address = Address
-    clinic.Code = Code
-    clinic.textarea = textarea
-    clinic.clinicId = clinicId
-    const savedClinic = await clinic.save()
-    return savedClinic
+    const clinic = new Clinic();
+    clinic.Clinicname = Clinicname;
+    clinic.Registernumber = Registernumber;
+    clinic.ABN = ABN;
+    clinic.Phone = Phone;
+    clinic.Date = Date;
+    clinic.Address = Address;
+    clinic.Code = Code;
+    clinic.textarea = textarea;
+    clinic.clinicId = clinicId;
+    const savedClinic = await clinic.save();
+    return savedClinic;
   }
   catch(error) {
-    return error
+    return error;
   }
   /**
    * Get all users
    *
    * @returns a list of users
    */
-  static async findOne(clinicId) {
+  static async findOne(Id) {
     try {
-      return Clinic.findOne({ clinicId }).exec()
+      return Clinic.findOne({ clinicId: Id }).exec();
     } catch (error) {
-      return error
+      return error;
     }
   }
   /**
@@ -60,9 +60,9 @@ export class ClinicController {
    */
   static async findById(clinicId) {
     try {
-      return Clinic.findById(clinicId).exec()
+      return Clinic.findById(clinicId).exec();
     } catch (error) {
-      return error
+      return error;
     }
   }
 
@@ -73,12 +73,12 @@ export class ClinicController {
    */
   static async findByIdAndUpdate(clinicId) {
     try {
-      return Clinic.findByIdAndUpdate(clinicId).exec()
+      return Clinic.findByIdAndUpdate(clinicId).exec();
     } catch (error) {
-      return error
+      return error;
     }
   }
   static async getClinic() {
-    return Clinic.find().sort({ createdAt: -1 }).exec()
+    return Clinic.find().sort({ createdAt: -1 }).exec();
   }
 }

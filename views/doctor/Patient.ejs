@@ -1,67 +1,67 @@
 <main>
-
-    <center>
-        <h1>Patients List:</h1>
+    <%- include('../partials/doctorProfileheaders');%>
         <center>
-            <div class="container doctorTable" id="doctorList">
-                <%- include('../partials/messages');%>
+            <h1>Patients List:</h1>
+            <center>
+                <div class="container doctorTable" id="doctorList">
+                    <%- include('../partials/messages');%>
 
 
 
-                    <table class="mt-4 p-5 rounded text-center responsive table "
-                        style="font-size: medium; font-weight: 600;">
-                        <thead style="font-size: large; font-weight: bold;">
-                            <tr>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Phone Number</th>
-                                <th>Date Of Birth</th>
-                                <th> Height</th>
-                                <th>Weight</th>
-                                <th>Gender</th>
-                                <th>BMI</th>
-                                <th>MediCare Number:</th>
-                            </tr>
-                        </thead>
-                        <tbody id="table-body">
-
-                            <% patient.forEach(function(patient) { %>
+                        <table class="mt-4 p-5 rounded text-center responsive table "
+                            style="font-size: medium; font-weight: 600;">
+                            <thead style="font-size: large; font-weight: bold;">
                                 <tr>
-                                    <td>
-                                        <%=patient.firstName%>
-                                    </td>
-                                    <td>
-                                        <%=patient.lastName%>
-                                    </td>
-                                    <td>
-                                        <%=patient.phoneNumber%>
-                                    </td>
-                                    <td>
-                                        <%=patient.dateOfBirth%>
-                                    </td>
-                                    <td>
-                                        <%=patient.height%>
-                                    </td>
-                                    <td>
-                                        <%=patient.weight%>
-                                    </td>
-                                    <td>
-                                        <%=patient.Gender%>
-                                    </td>
-                                    <td>
-                                        <%=patient.BMI%>
-                                    </td>
-                                    <td>
-                                        <%=patient.medicareNum%>
-                                    </td>
-
-                                    </td>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Date Of Birth</th>
+                                    <th> Height</th>
+                                    <th>Weight</th>
+                                    <th>Gender</th>
+                                    <th>BMI</th>
+                                    <th>MediCare Number:</th>
                                 </tr>
-                                <%});%>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody id="table-body">
 
-            </div>
-            <script src="../../models/doctorModel.js"></script>
-            <link rel="stylesheet" href="../../public/css/doctor/doctor.css" />
+                                <% patient.forEach(function(patient) { %>
+                                    <tr>
+                                        <td>
+                                            <%=patient.firstName%>
+                                        </td>
+                                        <td>
+                                            <%=patient.lastName%>
+                                        </td>
+                                        <td>
+                                            <%=patient.phoneNumber%>
+                                        </td>
+                                        <td>
+                                            <%=patient.dateOfBirth%>
+                                        </td>
+                                        <td>
+                                            <%=patient.height%>
+                                        </td>
+                                        <td>
+                                            <%=patient.weight%>
+                                        </td>
+                                        <td>
+                                            <%=patient.Gender%>
+                                        </td>
+                                        <td>
+                                            <%=patient.BMI%>
+                                        </td>
+                                        <td>
+                                            <%=patient.medicareNum%>
+                                        </td>
+
+                                        </td>
+                                    </tr>
+                                    <%});%>
+                            </tbody>
+                        </table>
+
+                </div>
+                <script src="../../models/doctorModel.js"></script>
+                <link rel="stylesheet" href="../../public/css/doctor/doctor.css" />
 </main>
