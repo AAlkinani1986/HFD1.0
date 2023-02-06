@@ -57,7 +57,7 @@ function generateHTML(results) {
 function select(id) {
   const element = document.querySelector(`#favorite_${id}`)
   const body = element.innerHTML.split('<')[0]
-  console.log(body)
+
   if (body === 'favorite') {
     element.innerHTML = 'favorite_border'
   } else {
