@@ -2,7 +2,7 @@ import { expect } from 'chai'
 import request from 'request'
 
 describe('login homepage', function () {
-  const url = 'http://localhost:3000/user/login'
+  const url = 'http://localhost:3000'
   //it functions
 
   it('return status 200 to check if home page can load ', function (done) {

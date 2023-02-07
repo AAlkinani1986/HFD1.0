@@ -9,7 +9,7 @@ describe('Admin Page endPoint', function () {
   before((done) => {
     mongoose.set('strictQuery', true)
     mongoose.connect(
-      'mongodb+srv://ILia:Ilia1993@cluster0.kl8ztqh.mongodb.net/HFD?retryWrites=true&w=majority',
+      process.env.MONGODB_URI,
       { useNewUrlParser: true, useUnifiedTopology: true },
       (err) => {
         if (err) return done(err)
