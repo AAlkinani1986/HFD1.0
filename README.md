@@ -24,14 +24,20 @@ Steps
     1) Add your Username and Password 
     2) Click login and get to your desired occupation
 6) If you are a **New Patient** you will need to create a account with HFD link:- http://localhost:3000/patient/registration
+   ![Patient Register Page](./public/images/Patientregis.png)
+
    If your have a **New Clinic** you will need to create a account with HFD link:- http://localhost:3000/clinic/registration
+      ![Clinic Register Page](./public/images/Clinic%20register.png)
+
    If you are a **New Doctor** you will need to create a account with HFD link:- http://localhost:3000/doctor/registration
+      ![Doctor Register Page](./public/images/doc%20regis.png)
+
 7) Existing Users will be navigated to there desired profile page where they can edit there deatils
 
 # Test Case
 We implemented 22 test case with your project
 Steps
-1) Start your npm server with npm start 
+1) Open terimal Start your npm server with npm start 
 2) Open new terminal add npm test
 3) you can see test cases running
 
