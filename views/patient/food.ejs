@@ -1,0 +1,53 @@
+
+<div class="container food_container">
+  <div class="row valign-wrapper">
+    <div class="col s12 m6 offset-m3">
+      <form  action="food" method="post" class="food_form">
+        <div class="input-field food_input_field">
+          <i class="material-icons prefix">search</i>
+          <input name="foodName" class="food_input" type="text" id="search" placeholder="Search...">
+          <label for="search">Search</label>
+          <button class="btn waves-effect waves-light food_button" type="submit">
+        Submit<%= productsList.length %> 
+            <i class="material-icons food_icon right">send</i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<form id="searchNutrients" action="searchnutrients" method="post"></form>
+<% if (productsList && productsList.length > 0) { %>
+  <div class="fullPage">
+    <div class="halfPage">
+      <table class="elements">
+        <tr>
+          <th class="elements"> </th>
+        </tr>
+        <tr>
+          <th>Product</th>
+          <th>Brand</th>
+          <th>Code</th>
+          <th >Select</th>
+        </tr>
+        <% productsList.forEach(product => { %>
+          <tr class="elements">
+            <td width="60%" class="elements"><%= product.description %></td>
+            <td width="20%" class="elements"><%= product.brandName  %></td>
+            <td class="elements"><%= product.gtinUpc %></td>
+          
+          </tr>
+          <% }); %>
+
+        <% productsList[1].foodNutrients.forEach(nutrient => { %>
+          <tr class="elements">
+            <td width="60%" class="elements"><%= nutrient.nutrientName %></td>
+            <td class="elements"><%= nutrient.value%></td>
+            <td class="elements"><%= nutrient.nutrientNumber %></td>
+          </tr>
+          <%})%>
+      </table>
+      </div>
+
+             <%}%>
