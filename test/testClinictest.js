@@ -6,9 +6,6 @@ import mongoose from 'mongoose'
 const App = app(config)
 
 describe('ClinicProfile', function () {
-  var url = 'http://localhost:3000/clinic/profile'
-  //it functions
-
   before((done) => {
     mongoose.set('strictQuery', true)
     mongoose.connect(
@@ -59,9 +56,3 @@ describe('ClinicProfile', function () {
     })
   })
 })
-
-
-
-
-
- 

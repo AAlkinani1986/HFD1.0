@@ -6,8 +6,6 @@ import mongoose from 'mongoose'
 const App = app(config)
 
 describe('Doctor registration ', function () {
-  const url = 'http://localhost:3000/doctor/registration'
-
   before((done) => {
     mongoose.set('strictQuery', true)
     mongoose.connect(
