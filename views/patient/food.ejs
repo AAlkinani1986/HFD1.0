@@ -1,0 +1,44 @@
+<%- include('../partials/userHeader');%> 
+<%- include('../partials/messages');%>
+<div class="container food_container " style="margin-bottom: 0px !important; padding-bottom: 0% !important;">
+  <div class="row valign-wrapper">
+    <div class="col s12 m6 offset-m3">
+      <form  action="food" method="post" class="food_form">
+        <div class="input-field food_input_field">
+          <i class="material-icons prefix">search</i>
+          <input name="foodName" class="food_input" type="text" id="search" placeholder="Search...">
+          <label for="search">Search</label>
+          <button class="btn waves-effect waves-light food_button" type="submit">
+        Submit
+            <i class="material-icons food_icon right">send</i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="container" style="margin-bottom: 100px !important; margin-top: 0px !important; ">
+
+  <% if (productsList && productsList.length > 0) { %>
+    <div class="grid-container">
+      <% productsList.forEach(product => { %>
+        <div class="grid-item">
+          <p><strong>Product:</strong> <%= product.description %></p>
+          <p><strong>Brand:</strong> <%= product.brandName  %></p>
+          <p><strong>Code:</strong> <%= product.gtinUpc %></p>
+          <% if (product.foodNutrients) { %>
+            <h5>Nutrients:</h5>
+            <ul>
+              <% product.foodNutrients.forEach(nutrient => { %>
+                <li><strong><%= nutrient.nutrientName %>:</strong> <%= nutrient.value %></li>
+              <% }) %>
+            </ul>
+          <% } %>
+        </div>
+      <% }) %>
+    </div>
+  <% } %>
+ 
+  <div style="height: 50px !important; background-color: hsla(0, 0%, 100%, 0);"></div> 
+  
+</div>

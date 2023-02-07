@@ -9,6 +9,5 @@ export function recipes() {
       patient: req.session.patient,
     })
   })
-
   return router
 }

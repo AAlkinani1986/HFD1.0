@@ -96,3 +96,48 @@ label{
     font-weight: 700;
     color: black !important;
 }
+.food_container{
+   
+    height: 40vh;
+    display: flex;
+    width: 100%;
+    align-items: center;
+
+}
+
+
+  
+ .food_input {
+    font-size: 1.5em;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    background-color: lightgray;
+  
+    width: 80%;
+  }
+  
+   .food_button {
+    font-size: 1.5em;
+
+  height: 50px !important;
+    margin-top: 20px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: rgb(51, 146, 72);
+ 
+    width: 50%;
+
+    cursor: pointer;
+  } 
+  
+.food_icon {
+    font-size: 1.5em;
+    color: rgb(241, 241, 241) !important;
+  }
+
+  .food_input-field{
+
+
+height: auto;
+  }

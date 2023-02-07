@@ -26,7 +26,7 @@ body{
    background-color: #1b5e20;
 }
 .info{
-    background-color: #039be5;
+    background-color: #ffd600;
 }
 .btn-floating:hover{
     background-color: #e53935
@@ -108,3 +108,24 @@ body{
     font-size: large !important;
     text-transform: capitalize ;
 }
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+
+  }
+  
+  .grid-item {
+    background-color: #80cbc4;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  .grid-item > p{
+    font-size:x-large;
+    color: rgb(80, 90, 98);
+  }
+  .grid-item  li{
+    font-size: medium;
+    color: azure;
+  }
