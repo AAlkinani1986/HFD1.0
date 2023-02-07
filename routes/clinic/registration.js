@@ -16,6 +16,9 @@ const router = Router()
 
 export function registrationClinic() {
   router.get('/registration', async function (req, res) {
+    if (req.session.user.occupation !== 'clinic') {
+      return res.redirect('/' + req.session.user.occupation + '/registration')
+    }
     const clinic = await ClinicController.findOne(req.session.user._id)
 
     if (clinic) {
@@ -51,7 +54,13 @@ export function registrationClinic() {
           text: 'Your account created successfully',
           type: 'success',
         })
-        return res.redirect('/clinic/profile')
+        if (user.occupation === 'Clinic') return res.redirect('/clinic/profile')
+       else {
+      return res
+        .status(200)
+        .redirect('/' + user.occupation + '/profile')
+    }
+        
       } catch (error) {
         return next(error)
       }
