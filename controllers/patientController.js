@@ -1,4 +1,4 @@
-import { Patient } from "../models/PatientModel.js";
+import { Patient } from '../models/PatientModel.js'
 /** */
 export class patientController {
   /**
@@ -35,40 +35,84 @@ export class patientController {
     medicalHistory,
     medicareNum,
     medicareEXP,
-    phoneNumber
+    phoneNumber,
   ) {
     try {
-      const patient = new Patient();
-      patient.patientId = patientId;
-      patient.firstName = firstName;
-      patient.lastName = lastName;
-      patient.middleName = middleName;
-      patient.fullName = fullName;
-      patient.dateOfBirth = dateOfBirth;
-      patient.address = address;
-      patient.height = height;
-      patient.weight = weight;
-      patient.Gender = Gender;
-      patient.BMI = BMI;
-      patient.medicalHistory = medicalHistory;
-      patient.medicareNum = medicareNum;
-      patient.medicareEXP = medicareEXP;
-      patient.phoneNumber = phoneNumber;
-      const newPatient = await patient.save();
-      return newPatient;
+      const patient = new Patient()
+      patient.patientId = patientId
+      patient.firstName = firstName
+      patient.lastName = lastName
+      patient.middleName = middleName
+      patient.fullName = fullName
+      patient.dateOfBirth = dateOfBirth
+      patient.address = address
+      patient.height = height
+      patient.weight = weight
+      patient.Gender = Gender
+      patient.BMI = BMI
+      patient.medicalHistory = medicalHistory
+      patient.medicareNum = medicareNum
+      patient.medicareEXP = medicareEXP
+      patient.phoneNumber = phoneNumber
+      const newPatient = await patient.save()
+      return newPatient
     } catch (error) {
-      return error;
+      return error
+    }
+  }
+  static async updatePatient(
+    patientId,
+    firstName,
+    lastName,
+    middleName,
+    fullName,
+    dateOfBirth,
+    address,
+    height,
+    weight,
+    Gender,
+    BMI,
+    medicalHistory,
+    medicareNum,
+    medicareEXP,
+    phoneNumber,
+  ) {
+    try {
+      await Patient.findOneAndUpdate(
+        { patientId: patientId },
+        {
+          $set: {
+            firstName,
+            lastName,
+            middleName,
+            fullName,
+            dateOfBirth,
+            address,
+            height,
+            weight,
+            Gender,
+            BMI,
+            medicalHistory,
+            medicareNum,
+            medicareEXP,
+            phoneNumber,
+          },
+        },
+      )
+      return true
+    } catch (error) {
+      return error
     }
   }
   static async findOne(Id) {
     try {
-      return Patient.findOne({ patientId: Id }).exec();
+      return Patient.findOne({ patientId: Id }).exec()
     } catch (error) {
-      return error;
+      return error
     }
   }
 
   static async getPatients() {
-    return Patient.find().sort({ createdAt: -1 }).exec();
+    return Patient.find().sort({ createdAt: -1 }).exec()
   }
 }

@@ -18,13 +18,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   console.log(instance.toString())
 })
-const uploadFile = document.getElementById('patient_img')
-const image = document.querySelector('img')
+const uploadFile = document.getElementById('upload_Image')
+const image = document.getElementById('image_patient')
 var uploadImage = ''
 uploadFile.addEventListener('change', () => {
   const reader = new FileReader()
   reader.addEventListener('load', () => {
     uploadImage = reader.result
+    console.log(uploadImage)
     image.setAttribute('src', uploadImage)
   })
   reader.readAsDataURL(uploadFile.files[0])

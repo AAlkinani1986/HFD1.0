@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
 const patientSchema = mongoose.Schema({
   firstName: {
@@ -50,6 +50,7 @@ const patientSchema = mongoose.Schema({
   },
   patientId: {
     type: String,
+    index: { unique: true },
   },
-});
-export const Patient = mongoose.model("patient", patientSchema, "patients");
+})
+export const Patient = mongoose.model('patient', patientSchema, 'patients')

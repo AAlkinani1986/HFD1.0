@@ -1,5 +1,12 @@
 import { body, validationResult } from 'express-validator'
+
 export class validation {
+  // static validateFirstName = body('firstName')
+  //   .isLength({ min: 3 })
+  //   .withMessage('The first name must be filled')
+  // static validateLastName = body('lastName')
+  //   .isLength({ min: 3 })
+  //   .withMessage('The last name must be filled')
   static validatePassword = body('password')
     .isLength({ min: 8 })
     .trim()
@@ -33,5 +40,6 @@ export class validation {
       return true
     })
     .withMessage('The Occupied must be selected')
+
   static validationResult = validationResult
 }
