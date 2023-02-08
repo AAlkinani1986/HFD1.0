@@ -93,12 +93,6 @@ export class ClinicController {
     }
   }
   static async getClinicsName() {
-    Clinic.find({}, 'ClinicName', (error, docs) => {
-      if (error) {
-        return error
-      } else {
-        return docs
-      }
-    })
+    return Clinic.find({}, 'ClinicName').exec()
   }
 }

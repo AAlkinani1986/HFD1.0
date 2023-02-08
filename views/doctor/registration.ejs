@@ -1,7 +1,7 @@
 <%- include('../partials/header');%>
   <div class="doctor-registration">
 
-    <div>
+ 
       <div class="container">
 
 
@@ -26,8 +26,8 @@
                   </div>
                 </div>
               </div>
-
-              <div class="row">
+            </div>
+          
 
                 <div class="row">
                   <div class="input-field col s6">
@@ -57,10 +57,13 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="input-field col s12">
-                    <input id="clinic" type="text" class="validate" placeholder="Clinic Name" name="clinic">
-                    <label for="clinic">Clinic Name:</label>
-                  </div>
+                  
+                  <select id="clinicSelect"  class="browser-default" name="clinic" >
+                    <option  disabled selected>Please select clinic</option>
+              
+                  </select>
+                   
+               
                 </div>
 
                 <div class="row">
@@ -86,7 +89,8 @@
                     <input id="address" type="text" class="validate" placeholder="Street, Suburb" name="address">
                     <label for="address">Address:</label>
                   </div>
-                  <div class="row">
+
+          
                     <div class="input-field col s6">
                       <input id="address" type="text" class="validate" placeholder="State" name="state">
                       <!-- <label for="address">Contact Details:</label> -->
@@ -98,7 +102,7 @@
                       <label for="pinCode">Pin Code:</label>
                     </div>
                   </div>
-                </div>
+                
                 <button class="btn waves-effect waves-light col offset-s4" type="submit" name="action">Submit
                 </button>
             </form>
@@ -106,7 +110,21 @@
 
 
 
-      </div>
-    </div>
-  </div>
+
+  <script>
+$.ajax({
+  url: "http://localhost:3000/api/clinicsName",
+  type: "GET",
+  success: function(data) {
+    // Get the select element
+    var select = $("#clinicSelect");
+
+    // Loop through the data and create options
+    $.each(data, function(index, clinic) {
+      var option = $("<option></option>").text(clinic.ClinicName).val(clinic.ClinicName);
+      select.append(option);
+    });
+  }
+});
+  </script>
   <script src="../../public/js/doctor/doctor.js"></script>
