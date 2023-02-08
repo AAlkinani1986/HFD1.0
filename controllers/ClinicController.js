@@ -3,8 +3,8 @@ import { Clinic } from "../models/ClinicModel.js";
 export class ClinicController {
   /**
    * Creates
-   * @param {Clinicname} Clinicname
-   * @param {Registernumber} Registernumber
+   * @param {ClinicName} ClinicName
+   * @param {RegisterNumber} RegisterNumber
    * @param {ABN} ABN
    *  @param {Phone} Phone
    * @param {Date} Date
@@ -15,8 +15,8 @@ export class ClinicController {
    * @returns save result
    */
   static async createclinic(
-    Clinicname,
-    Registernumber,
+    ClinicName,
+    RegisterNumber,
     ABN,
     Phone,
     Date,
@@ -25,9 +25,10 @@ export class ClinicController {
     textarea,
     clinicId
   ) {
+    try{
     const clinic = new Clinic();
-    clinic.Clinicname = Clinicname;
-    clinic.Registernumber = Registernumber;
+    clinic.ClinicName = ClinicName;
+    clinic.RegisterNumber = RegisterNumber;
     clinic.ABN = ABN;
     clinic.Phone = Phone;
     clinic.Date = Date;
@@ -40,6 +41,33 @@ export class ClinicController {
   }
   catch(error) {
     return error;
+  }
+}
+  static async updateClinic(
+    clinicId,
+    ClinicName,
+    Phone,
+    Address,
+    Code,
+    textarea,
+   ) {
+    try {
+      await Clinic.findOneAndUpdate(
+        { clinicId: clinicId },
+        {
+          $set: {
+            ClinicName,
+            Phone,
+            Address,
+            Code,
+            textarea,
+          },
+        },
+      )
+      return true;
+    } catch (error) {
+      return error;
+    }
   }
   /**
    * Get all users
@@ -64,21 +92,5 @@ export class ClinicController {
     } catch (error) {
       return error;
     }
-  }
-
-  /**
-   * Finds a user by id
-   * @param {*} clinicId
-   * @returns a user
-   */
-  static async findByIdAndUpdate(clinicId) {
-    try {
-      return Clinic.findByIdAndUpdate(clinicId).exec();
-    } catch (error) {
-      return error;
-    }
-  }
-  static async getClinic() {
-    return Clinic.find().sort({ createdAt: -1 }).exec();
   }
 }

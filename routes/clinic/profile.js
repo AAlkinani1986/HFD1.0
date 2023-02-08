@@ -1,53 +1,49 @@
 import { Router } from 'express'
+import multer from 'multer'
 import { ClinicController } from '../../controllers/ClinicController.js';
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './public/data/uploads/clinc')
+  },
+  filename: function (req, file, cb) {
+    cb(null, req.session.user._id + '.jpg')
+  },
+})
+
 
 const router = Router()
 
 export function Profile() {
   router.get("/profile", async (req, res, next) => {
-      const Clinic = await ClinicController.findOne(req.session.user._id)
-      
+      const Clinic = await ClinicController.findOne(req.session.user._id)  
+      req.session.Clinic = Clinic
     res.render("clinic/profile", {
       page: "profile Clinic",
       clinic : Clinic
-      
     });
-    
-  });
-  
-  router.post("/profile",
-  ClinicController.getClinic,
-  async (req, res)=>{
+  }); 
+  router.post("/profile", async (req, res, next)=>{
     try{
-    const Clinic =await ClinicController.UpdateProfile(req.params.ABN,
-      req.params.Clinicname,
-      req.params.Phone,
-      req.params.Address,
-      req.params.Code,
-      req.params.textarea)
-    console.log(Clinic)
-    Clinic.Clinicname = Clinicname
-   Clinic.save()
-   req.session.messages.push({
-    text: 'Your account Update successfully',
-    type: 'success',
+      await ClinicController.updateClinic(
+        req.session.user._id,
+        req.body.ClinicName,
+        req.body.Phone,
+        req.body.Address,
+        req.body.Code,
+        req.body.textbox,
+      );
+      req.session.messages.push({
+        text: 'Your account updated successfully',
+        type: 'success',
+      })
+
+      return res.redirect('/clinic/profileupdate')
+    } catch (error) {
+      return next(error)
+    }
   })
-    return res.render("clinic/profile", {
-      page: "profile Clinic"
-    })
-  }catch (error) {
-    return next(error)
-  }
-   })
-
-   router.get("/profile/:ABN",async (req, res)=>{
-    const Clinic = await ClinicController.findOneByABN(req.params.ABN )
-
-   res.render("clinic/profileupdate", {
-     page: "profile Clinic",
-     clinic : Clinic
-   })
-   })
-  
-  return router;
+  return router
 }
+
+

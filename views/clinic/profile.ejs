@@ -21,13 +21,13 @@
                     <span class="card-title grey-text text-darken-4">Clinic profile
                         <i class="material-icons right">close</i></span>
                     <div class="row">
-                        <form action="" method="" class="col s12">
+                        <form action="profile" method="post" class="col s12">
                             <input type="hidden" name="_id" value="<%=clinic.clinicId%>">
 
                             <div class="row">
                                 <div class="input-field col s6">
                                     <input placeholder="Clinicname" id="Clinicname" type="text" class="validate"
-                                        name="Clinicname" value="<%=clinic.Clinicname%>">
+                                        name="ClinicName" value="<%=clinic.ClinicName%>">
 
                                     <label for="Clinicname">Clinic Name:-</label>
                                 </div>
@@ -51,13 +51,14 @@
                                     <label for="Address">Address:-</label>
                                 </div>
                             </div>
-                        </form>
+                      
                     </div>
-                    <a href="/clinic/profile/<%= clinic.clinicId %>" button class="btn waves-effect waves-light"
-                        type="submit" name="action" id="btn"> Update</a></button>
+                    <button class="btn waves-effect waves-light"
+                        type="submit" name="action" > Update</button>
                 </div>
             </div>
         </div>
+    </form>
         <div class="col s12 m6">
             <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
