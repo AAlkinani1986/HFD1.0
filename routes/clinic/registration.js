@@ -54,13 +54,8 @@ export function registrationClinic() {
           text: 'Your account created successfully',
           type: 'success',
         })
-        if (user.occupation === 'Clinic') return res.redirect('/clinic/profile')
-       else {
-      return res
-        .status(200)
-        .redirect('/' + user.occupation + '/profile')
-    }
-        
+
+        return res.status(200).redirect('/clinic/profile')
       } catch (error) {
         return next(error)
       }

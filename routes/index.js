@@ -6,6 +6,7 @@ import cors from 'cors'
 import { doctorRoutes } from './Doctor/index.js'
 import { clinicRoutes } from './clinic/index.js'
 import { patientRoutes } from './patient/index.js'
+import { apiRouters } from './api/index.js'
 
 var router = Router()
 // the module will return a function and pass params to routers
@@ -26,6 +27,6 @@ export function routers(params) {
   router.use('/clinic', ensureLoggedIn('/'), clinicRoutes(params))
 
   router.use('/patient', ensureLoggedIn('/'), patientRoutes(params))
-
+  router.use('/api', cors(), apiRouters(params))
   return router
 }
