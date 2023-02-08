@@ -39,9 +39,6 @@ export function registrationDoctor() {
     '/registration',
     upload.single('avatar'),
     async (req, res, next) => {
-      console.log(req.file)
-
-      console.log(req.body)
       try {
         await doctorController.createDoctor(
           req.body.firstName,
