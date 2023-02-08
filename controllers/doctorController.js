@@ -31,24 +31,63 @@ export class doctorController {
     pinCode,
     doctorId
   ) {
-    const doctor = new Doctor();
-    doctor.firstName = firstName;
-    doctor.lastName = lastName;
-    doctor.dateOfBirth = dateOfBirth;
-    doctor.registrationNumber = registrationNumber;
-    doctor.qualifications = qualifications;
-    doctor.clinic = clinic;
-    doctor.languages = languages;
-    doctor.abn = abn;
-    doctor.address = address;
-    doctor.state = state;
-    doctor.pinCode = pinCode;
-    doctor.doctorId = doctorId;
-    const savedDoctor = await doctor.save();
-    return savedDoctor;
+    try {
+      const doctor = new Doctor();
+      doctor.firstName = firstName;
+      doctor.lastName = lastName;
+      doctor.dateOfBirth = dateOfBirth;
+      doctor.registrationNumber = registrationNumber;
+      doctor.qualifications = qualifications;
+      doctor.clinic = clinic;
+      doctor.languages = languages;
+      doctor.abn = abn;
+      doctor.address = address;
+      doctor.state = state;
+      doctor.pinCode = pinCode;
+      doctor.doctorId = doctorId;
+      const savedDoctor = await doctor.save();
+      return savedDoctor;
+    } catch (error) {
+      return error;
+    }
   }
-  catch(error) {
-    return error;
+  static async updateDoctor(
+    doctorId,
+    firstName,
+    lastName,
+    dateOfBirth,
+    registrationNumber,
+    qualifications,
+    clinic,
+    languages,
+    abn,
+    address,
+    state,
+    pinCode
+  ) {
+    try {
+      await Doctor.findOneAndUpdate(
+        { doctorId: doctorId },
+        {
+          $set: {
+            firstName,
+            lastName,
+            dateOfBirth,
+            registrationNumber,
+            qualifications,
+            clinic,
+            languages,
+            abn,
+            address,
+            state,
+            pinCode,
+          },
+        }
+      );
+      return true;
+    } catch (error) {
+      return error;
+    }
   }
 
   /**
