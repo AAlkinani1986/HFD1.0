@@ -9,5 +9,4 @@ export function clinicRoutes(params) {
   router.use(Profile(params))
   router.use(profileupdate(params))
   return router
-
 }

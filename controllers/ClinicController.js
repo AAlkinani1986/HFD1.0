@@ -1,4 +1,4 @@
-import { Clinic } from "../models/ClinicModel.js";
+import { Clinic } from '../models/ClinicModel.js'
 
 export class ClinicController {
   /**
@@ -23,26 +23,25 @@ export class ClinicController {
     Address,
     Code,
     textarea,
-    clinicId
+    clinicId,
   ) {
-    try{
-    const clinic = new Clinic();
-    clinic.ClinicName = ClinicName;
-    clinic.RegisterNumber = RegisterNumber;
-    clinic.ABN = ABN;
-    clinic.Phone = Phone;
-    clinic.Date = Date;
-    clinic.Address = Address;
-    clinic.Code = Code;
-    clinic.textarea = textarea;
-    clinic.clinicId = clinicId;
-    const savedClinic = await clinic.save();
-    return savedClinic;
+    try {
+      const clinic = new Clinic()
+      clinic.ClinicName = ClinicName
+      clinic.RegisterNumber = RegisterNumber
+      clinic.ABN = ABN
+      clinic.Phone = Phone
+      clinic.Date = Date
+      clinic.Address = Address
+      clinic.Code = Code
+      clinic.textarea = textarea
+      clinic.clinicId = clinicId
+      const savedClinic = await clinic.save()
+      return savedClinic
+    } catch (error) {
+      return error
+    }
   }
-  catch(error) {
-    return error;
-  }
-}
   static async updateClinic(
     clinicId,
     ClinicName,
@@ -50,7 +49,7 @@ export class ClinicController {
     Address,
     Code,
     textarea,
-   ) {
+  ) {
     try {
       await Clinic.findOneAndUpdate(
         { clinicId: clinicId },
@@ -64,9 +63,9 @@ export class ClinicController {
           },
         },
       )
-      return true;
+      return true
     } catch (error) {
-      return error;
+      return error
     }
   }
   /**
@@ -76,9 +75,9 @@ export class ClinicController {
    */
   static async findOne(Id) {
     try {
-      return Clinic.findOne({ clinicId: Id }).exec();
+      return Clinic.findOne({ clinicId: Id }).exec()
     } catch (error) {
-      return error;
+      return error
     }
   }
   /**
@@ -88,9 +87,18 @@ export class ClinicController {
    */
   static async findById(clinicId) {
     try {
-      return Clinic.findById(clinicId).exec();
+      return Clinic.findById(clinicId).exec()
     } catch (error) {
-      return error;
+      return error
     }
+  }
+  static async getClinicsName() {
+    Clinic.find({}, 'ClinicName', (error, docs) => {
+      if (error) {
+        return error
+      } else {
+        return docs
+      }
+    })
   }
 }
