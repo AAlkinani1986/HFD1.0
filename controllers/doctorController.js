@@ -1,9 +1,8 @@
-// import { doc } from "prettier";
 import { Doctor } from "../models/doctorModel.js";
 
 export class doctorController {
   /**
-   * Creates a new user
+   * Creating a new Doctor
    *
    * @param {firstName} firstName
    * @param {lastName} lastName
@@ -53,9 +52,9 @@ export class doctorController {
   }
 
   /**
-   * Finds a user by id
+   * Finding by id
    * @param {*} id
-   * @returns a user
+   * @returns
    */
   static async findById(id) {
     try {
@@ -74,7 +73,7 @@ export class doctorController {
   }
 
   /**
-   * returns the password reset token for a user
+   *
    * @param {*} id
    * @returns a user
    */
@@ -87,7 +86,7 @@ export class doctorController {
   }
 
   /**
-   * Get all users
+   * getting all Doctors
    *
    * @returns a list of users
    */

@@ -25,19 +25,6 @@ var myArray = [
   },
 ];
 
-// var tableData = [];
-
-// for (var i in tableData) {
-//   var row = `<tr>
-//   <td>${tableData[i].name}</td>
-//   <td>${tableData[i].age}</td>
-//   <td>${tableData[i].date}</td>
-//   <td>${tableData[i].time}</td>
-//   </tr>`;
-//   var table = $("#table-body");
-//   table.append(row);
-//}
-
 buidTabele(myArray);
 
 function buidTabele(data) {
