@@ -90,8 +90,6 @@ export function resetPassword() {
   /** */
 
   router.get('/changePassword', (req, res) => {
-    console.log('id', req.session.userId)
-    console.log('token', req.session.userId)
     res.render('user/changePassword', {
       page: 'resetPassword',
       userId: req.session.userId,

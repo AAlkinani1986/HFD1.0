@@ -2,15 +2,15 @@ import { Router } from 'express'
 import multer from 'multer'
 import { patientController } from '../../controllers/patientController.js'
 
-// const storage = multer.diskStorage({
-//   destination: function (req, file, cb) {
-//     cb(null, './public/data/uploads/patient')
-//   },
-//   filename: function (req, file, cb) {
-//     cb(null, req.session.user._id + '.jpg')
-//   },
-// })
-const upload = multer({ dest: 'public/data/uploads/doctor' })
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './public/data/uploads/patient')
+  },
+  filename: function (req, file, cb) {
+    cb(null, req.session.user._id + '.jpg')
+  },
+})
+const upload = multer({ storage: storage })
 const router = Router()
 export function registration() {
   router.get('/registration', async (req, res) => {
