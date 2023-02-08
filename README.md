@@ -12,7 +12,7 @@ Our application consist of 3 modules Clinic, Patient and Doctors
 Steps
 1) Open Visual code terminal from github
 2) Install dependencies with **npm i**
-3) After getting the dependencies add **npm start** to termianl
+3) After getting the dependencies run the command **npm start** 
 4) Open browser enter url :- http://localhost:3000/
 ![Login Page](./public/images/Login.jpg)
 5) if **New User**
