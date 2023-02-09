@@ -5,8 +5,9 @@ const router = Router()
 export function clinicRoutes() {
   router.get('/clinicsName', async (req, res, next) => {
     try {
-      const clinics = ClinicController.getClinicsName()
-      return clinics
+      const clinics = await ClinicController.getClinicsName()
+
+      res.json(clinics)
     } catch (error) {
       return error
     }
