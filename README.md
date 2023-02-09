@@ -33,6 +33,11 @@ Steps
       ![Doctor Register Page](./public/images/doc%20regis.png)
 
 7) Existing Users will be navigated to there desired profile page where they can edit there deatils
+8) Patients can also view the recipes and serach for several food items with viewing their health benenfits
+      ![Recipe Page](./public/images/recp.png)
+9) Patients can also add thier recipes with Ingredients so that others can have benefit from it
+       ![Plan your diet Page](./public/images/plan.png)
+
 
 # Test Case
 We implemented 22 test case with your project
