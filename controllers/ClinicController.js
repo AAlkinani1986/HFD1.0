@@ -95,4 +95,7 @@ export class ClinicController {
   static async getClinicsName() {
     return Clinic.find({}, 'ClinicName').exec()
   }
+  static async getFirstThree() {
+    return Clinic.find().limit(3)
+  }
 }

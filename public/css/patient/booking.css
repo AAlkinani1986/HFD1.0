@@ -1,0 +1,69 @@
+.book_appointment{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
+padding: 5px;
+   border: 4px solid black;
+}
+.booking_days{
+    display: flex;
+    justify-content: center;
+align-items: center;
+}
+.book_days{
+    display: flex;
+}
+.booking_title > h5{
+    margin: 0 !important;
+}
+.book_day{
+    margin: 0 5px;
+    padding: 0 5px;
+    border: 2px solid black;
+}
+.book_day > p{
+padding: 0 ;
+margin: 0;
+font-size: medium;
+font-weight: 700;
+}
+.booking_details{
+    display: flex;
+    margin-right: 20px;
+    justify-content: space-between;
+   width: 95%;
+}
+.clinic_details{
+    display: flex;
+    margin-bottom: 10px;
+}
+.C_details{
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-left: 15px;
+font-size: medium;
+} 
+.C_details p{
+
+    padding-bottom: 5px;
+
+}
+.C_details a{
+    text-decoration: underline;
+}
+.C_details a:hover{
+    text-decoration: none;
+}
+.doctor_details{
+    display: flex;
+    justify-content: center;
+}
+.D_details{
+margin-left: 10px;
+}
+.doctor_img{
+    margin-top: 15px;
+    padding-right: 10px;
+}
