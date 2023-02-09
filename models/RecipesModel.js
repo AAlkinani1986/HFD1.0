@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const RecipesSchema = mongoose.Schema({
+const RecipeSchema = mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -18,4 +18,4 @@ const RecipesSchema = mongoose.Schema({
     required: true,
   },
 })
-export const recipe = mongoose.model('recipe', RecipesSchema, 'recipes')
+export const Recipe = mongoose.model('recipe', RecipeSchema, 'recipes')
