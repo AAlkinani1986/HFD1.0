@@ -4,6 +4,17 @@ import { doctorController } from "../../controllers/doctorController.js";
 
 const router = Router();
 
+// const storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, "./public/data/uploads/doctor");
+//   },
+//   filename: function (req, file, cb) {
+//     cb(null, req.session.user._id + ".jpg");
+//   },
+// });
+
+// const upload = multer({ storage: storage });
+
 export function profileDoctor() {
   router.get("/profile", async (req, res) => {
     const doctor = await doctorController.findOne(req.session.user._id);

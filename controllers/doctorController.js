@@ -1,4 +1,4 @@
-import { Doctor } from '../models/doctorModel.js'
+import { Doctor } from "../models/doctorModel.js";
 
 export class doctorController {
   /**
@@ -29,26 +29,65 @@ export class doctorController {
     address,
     state,
     pinCode,
-    doctorId,
+    doctorId
   ) {
-    const doctor = new Doctor()
-    doctor.firstName = firstName
-    doctor.lastName = lastName
-    doctor.dateOfBirth = dateOfBirth
-    doctor.registrationNumber = registrationNumber
-    doctor.qualifications = qualifications
-    doctor.clinic = clinic
-    doctor.languages = languages
-    doctor.abn = abn
-    doctor.address = address
-    doctor.state = state
-    doctor.pinCode = pinCode
-    doctor.doctorId = doctorId
-    const savedDoctor = await doctor.save()
-    return savedDoctor
+    try {
+      const doctor = new Doctor();
+      doctor.firstName = firstName;
+      doctor.lastName = lastName;
+      doctor.dateOfBirth = dateOfBirth;
+      doctor.registrationNumber = registrationNumber;
+      doctor.qualifications = qualifications;
+      doctor.clinic = clinic;
+      doctor.languages = languages;
+      doctor.abn = abn;
+      doctor.address = address;
+      doctor.state = state;
+      doctor.pinCode = pinCode;
+      doctor.doctorId = doctorId;
+      const savedDoctor = await doctor.save();
+      return savedDoctor;
+    } catch (error) {
+      return error;
+    }
   }
-  catch(error) {
-    return error
+  static async updateDoctor(
+    doctorId,
+    firstName,
+    lastName,
+    dateOfBirth,
+    registrationNumber,
+    qualifications,
+    clinic,
+    languages,
+    abn,
+    address,
+    state,
+    pinCode
+  ) {
+    try {
+      await Doctor.findOneAndUpdate(
+        { doctorId: doctorId },
+        {
+          $set: {
+            firstName,
+            lastName,
+            dateOfBirth,
+            registrationNumber,
+            qualifications,
+            clinic,
+            languages,
+            abn,
+            address,
+            state,
+            pinCode,
+          },
+        }
+      );
+      return true;
+    } catch (error) {
+      return error;
+    }
   }
 
   /**
@@ -58,17 +97,17 @@ export class doctorController {
    */
   static async findById(id) {
     try {
-      return Doctor.findById(id).exec()
+      return Doctor.findById(id).exec();
     } catch (error) {
-      return error
+      return error;
     }
   }
 
   static async findOne(Id) {
     try {
-      return Doctor.findOne({ doctorId: Id }).exec()
+      return Doctor.findOne({ doctorId: Id }).exec();
     } catch (error) {
-      return error
+      return error;
     }
   }
 
@@ -79,9 +118,9 @@ export class doctorController {
    */
   static async getResetToken(doctorId) {
     try {
-      return ResetTokenModel.findOne({ doctorId }).exec()
+      return ResetTokenModel.findOne({ doctorId }).exec();
     } catch (error) {
-      return error
+      return error;
     }
   }
 
@@ -91,10 +130,6 @@ export class doctorController {
    * @returns a list of users
    */
   static async getDoctors() {
-    return Doctor.find().sort({ createdAt: -1 }).exec()
-  }
-
-  static async getFirstThree(clinic_name) {
-    return Doctor.find({ clinic: clinic_name }).limit(3)
+    return Doctor.find().sort({ createdAt: -1 }).exec();
   }
 }
