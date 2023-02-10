@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 import http from 'http'
 import config from '../config/index.js'
-
+import { socketIo } from '../socketIo.js'
 const { logger } = config
 import { app } from '../../app.js'
 
@@ -39,7 +39,7 @@ App.set('port', port)
  */
 
 const server = http.createServer(App)
-
+socketIo(server)
 /**
  * Connect to mongodb and start the webserver listening on provided port, on all network interfaces.
  */

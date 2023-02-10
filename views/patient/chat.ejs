@@ -1,0 +1,69 @@
+<%- include('../partials/userHeader');%> 
+ <%- include('../partials/messages');%>
+ <%-include('../partials/startChat');%>
+ <script>
+
+var user = `<%- JSON.stringify(user) %>`;
+user = JSON.parse(user);
+console.log(user.username)
+const socket = io('http://localhost:3000');
+var room = "";
+
+
+socket.on('connect', () => {
+  socket.on('join private room', (roomId) => {
+   room = roomId;
+    console.log('roomId' ,roomId)
+   socket.emit('join', { room: room });
+  
+});
+
+  // Emit the login event with the user's username
+  socket.emit('login', user.username)
+  socket.emit('message', 'User connected')
+
+  // Listen for the updated user list
+  var userList = $("#userList");
+  socket.on('update user list', (users) => {
+    userList.empty();
+    Object.entries(users).forEach(([key, value]) => {
+      const user = `
+        <div  class="user" onClick="createPrivateRoom('${key}', '${value}')">
+          <div class="imageUser">
+            <img class="circle" style="width: 50px; height: 50px;" src="../../public/data/uploads/clinic/63ce85e62d25689b074739fd.jpg" alt="clinic">
+          </div>
+          <div class="username">
+            <p>${key}</p>
+          </div>
+        </div>`
+      console.log(key + ": " + value);
+      userList.append(user)
+    });
+  });
+});
+
+socket.on('message', (msg) => {
+    $('#messages').append($('<li>').text(msg));
+
+});
+
+socket.on('disconnect', () => {
+  socket.emit('logout', user.username);
+});
+
+function createPrivateRoom(key, id) {
+  alert(`Start chat with, ${key}`)
+  socket.emit('create private room', id);
+ 
+  // Sende
+  room = [socket.id, id].sort().join('-')
+
+  
+ }
+ $('form').submit(() => {
+        let msg = $('#m').val();
+        socket.emit('message', { msg, room });
+        $('#m').val('');
+        return false;
+      });
+        </script>

@@ -249,3 +249,25 @@
 
         <link rel="stylesheet" href="/public/css/clinic/clinic.css">
 </main>
+<script>
+
+    // the user can emit a 'login' event with their username
+    
+    
+    var user = `<%- JSON.stringify(user) %>`;
+    user = JSON.parse(user);
+        console.log(user.username)
+        const socket = io();
+        socket.on('connect', () => {
+            // emiting to everybody
+            socket.emit('login', user.username)
+            socket.emit('message', 'User connected')
+          })
+          socket.on('message', (msg) => {
+            console.log(msg)
+            // $('#messages').append($('<li>').text(msg))
+          })
+         socket.on('disconnect',()=>{
+          socket.emit('logout', user.username);
+         })
+        </script>
